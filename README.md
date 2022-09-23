@@ -32,7 +32,6 @@ GAG runs on `localhost:19000` by default.
 
 - [ ] Projektet använder minst 6 stycken RN-komponenter och minst 6 stycken Expo
       komponenter.
-
 - [ ] De utvalda komponenterna ska antecknas i er README tillsammans med en lista över
       genomförda krav.
 - [ ] Git & GitHub har använts
