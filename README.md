@@ -19,12 +19,21 @@ $ npm start
 
 GAG runs on `localhost:19000` by default.
 
+## Used components
+
+- [React Native](https://facebook.github.io/react-native/)
+
+- [Expo](https://docs.expo.dev/)
+
+- [React Navigation](https://reactnavigation.org/)
+  - [Stack-navigator](https://reactnavigation.org/docs/en/stack-navigator.html)
+
 ## Demands for a passing grade
 
 - [ ] Projektet använder minst 6 stycken RN-komponenter och minst 6 stycken Expo
-komponenter.
+      komponenter.
 - [ ] De utvalda komponenterna ska antecknas i er README tillsammans med en lista över
-genomförda krav.
+      genomförda krav.
 - [ ] Git & GitHub har använts
 - [ ] Projektmappen innehåller en README.md fil - (läs ovan för mer info)
 - [ ] Uppgiften lämnas in i tid!
@@ -36,4 +45,4 @@ genomförda krav.
 - [ ] React Navigation används för att skapa en bättre upplevelse i appen.
 - [ ] Ytterligare en valfri extern modul används i projektet.
 - [ ] Prototyper för applikation tas fram innan den implementeras. Bilder på prototypen
-skall finnas i projektet vid inlämning.
+      skall finnas i projektet vid inlämning.
