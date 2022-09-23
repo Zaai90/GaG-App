@@ -23,7 +23,6 @@ GAG runs on `localhost:19000` by default.
 
 - [ ] Projektet använder minst 6 stycken RN-komponenter och minst 6 stycken Expo
 komponenter.
-
 - [ ] De utvalda komponenterna ska antecknas i er README tillsammans med en lista över
 genomförda krav.
 - [ ] Git & GitHub har använts
@@ -32,6 +31,7 @@ genomförda krav.
 - [ ] Muntlig presentation är genomförd
 
 ## Demands for a higher grade
+
 - [ ] Alla punkter för godkänt är uppfyllda
 - [ ] React Navigation används för att skapa en bättre upplevelse i appen.
 - [ ] Ytterligare en valfri extern modul används i projektet.
