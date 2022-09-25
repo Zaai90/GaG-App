@@ -9,7 +9,13 @@ const HomeStackNavigator = () => {
   return (
     <RootStack.Navigator>
       <RootStack.Screen name="Home" component={HomeScreen} />
-      <RootStack.Screen name="PlayThisScreen" component={PlayThisScreen} />
+      <RootStack.Screen
+        name="PlayThisScreen"
+        component={PlayThisScreen}
+        options={{
+          title: "Play this game",
+        }}
+      />
     </RootStack.Navigator>
   );
 };
