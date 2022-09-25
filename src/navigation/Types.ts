@@ -1,12 +1,12 @@
-import {RouteProp} from '@react-navigation/native';
+import { RouteProp } from "@react-navigation/native";
 export type RootStackParamList = {
-    Home: undefined;
-    Settings: undefined;
-    SelectScreen: undefined;
-    AddScreen: undefined;
-    EditScreen: {id: string;}
-    FavoriteScreen: undefined;
-    GameListScreen: undefined;
-}
+  Home: undefined;
+  Settings: undefined;
+  SelectScreen: undefined;
+  AddScreen: undefined;
+  EditScreen: { id: string };
+  PlayThisFavScreen: undefined;
+  GameListScreen: undefined;
+};
 
-export type SelectScreenRootProps = RouteProp<RootStackParamList, 'SelectScreen'>;
+export type SelectScreenRootProps = RouteProp<RootStackParamList, "SelectScreen">;
