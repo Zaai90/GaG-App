@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AddScreen from "../Screens/Add";
+import EditScreen from "../Screens/Edit";
 import FavGameListScreen from "../Screens/FavGameList";
 import GameListScreen from "../Screens/GameList";
 import HomeScreen from "../Screens/Home";
@@ -49,6 +50,11 @@ const HomeStackNavigator = () => {
         options={{
           title: "Add game",
         }}
+      />
+      <RootStack.Screen
+        name="EditScreen"
+        component={EditScreen}
+        options={({ route }) => ({ title: "EditScreen" + route.params.id })}
       />
     </RootStack.Navigator>
   );

@@ -5,10 +5,11 @@ import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "EditScreen">;
 
-const EditScreen = ({ navigation }: Props) => {
+const EditScreen = ({ navigation, route }: Props) => {
   return (
     <View>
       <Text>Edit Screen</Text>
+      <Text>{route.params.id}</Text>
     </View>
   );
 };

@@ -3,7 +3,7 @@ export type RootStackParamList = {
   Settings: undefined;
   PlayThisScreen: undefined;
   AddScreen: undefined;
-  EditScreen: { id: string };
+  EditScreen: { id: string; path?: string };
   PlayThisFavScreen: undefined;
   GameListScreen: undefined;
   FavGameListScreen: undefined;
