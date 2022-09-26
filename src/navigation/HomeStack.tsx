@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
 import Add from "../Screens/Add";
 import Edit from "../Screens/Edit";
 import FavGameList from "../Screens/FavGameList";
