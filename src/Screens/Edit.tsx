@@ -11,6 +11,18 @@ const EditScreen = ({ navigation, route }: Props) => {
       <Text>Edit Screen</Text>
       <Text>{route.params.id}</Text>
       <Button
+        title="Save changes"
+        onPress={() => {
+          navigation.navigate("GameListScreen");
+        }}
+      />
+      <Button
+        title="Cancel"
+        onPress={() => {
+          navigation.navigate("GameListScreen");
+        }}
+      />
+      <Button
         title="Home"
         onPress={() => {
           navigation.navigate("Home");
