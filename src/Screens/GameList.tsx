@@ -9,10 +9,24 @@ const GameListScreen = ({ navigation }: Props) => {
   return (
     <View>
       <Text>Game list screen </Text>
-      <Button title="Settings" onPress={() => { navigation.navigate("Settings");}} />
-      <Button title="Home"
-       onPress={() => {
-        navigation.navigate("Home")}}/>
+      <Button
+        title="Add game"
+        onPress={() => {
+          navigation.navigate("AddScreen");
+        }}
+      />
+      <Button
+        title="Settings"
+        onPress={() => {
+          navigation.navigate("Settings");
+        }}
+      />
+      <Button
+        title="Home"
+        onPress={() => {
+          navigation.navigate("Home");
+        }}
+      />
     </View>
   );
 };
