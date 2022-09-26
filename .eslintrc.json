@@ -15,5 +15,8 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "react-native"],
-  "rules": {}
+  "rules": {
+    "@typescript-eslint/no-namespace": [2, { "allowDeclarations": true }],
+    "@typescript-eslint/no-empty-interface": 0
+  }
 }
