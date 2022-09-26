@@ -8,7 +8,7 @@ type Props = NativeStackScreenProps<RootStackParamList, "GameListScreen">;
 const GameListScreen = ({ navigation }: Props) => {
   return (
     <View>
-      <Text>Play this screen </Text>
+      <Text>Game list screen </Text>
     </View>
   );
 };
