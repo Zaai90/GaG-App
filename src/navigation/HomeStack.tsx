@@ -1,8 +1,9 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import FavGameListScreen from "../Screens/FavGameList";
+import GameListScreen from "../Screens/GameListScreen";
 import HomeScreen from "../Screens/Home";
 import PlayThisScreen from "../Screens/PlayThis";
-import PlayThisFavScreen from "../Screens/PlayThisFavorite";
+import PlayThisFavScreen from "../Screens/PlayThisFav";
 import Settings from "../Screens/Settings";
 import { RootStackParamList } from "./types";
 
@@ -25,6 +26,13 @@ const HomeStackNavigator = () => {
         component={PlayThisScreen}
         options={{
           title: "Play this game",
+        }}
+      />
+      <RootStack.Screen
+        name="GameListScreen"
+        component={GameListScreen}
+        options={{
+          title: "List of all your games",
         }}
       />
       <RootStack.Screen
