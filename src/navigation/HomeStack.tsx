@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import FavGameList from "../Screens/FavGameList";
 import HomeScreen from "../Screens/Home";
 import PlayThisScreen from "../Screens/PlayThis";
 import PlayThisFavScreen from "../Screens/PlayThisFavorite";
@@ -22,6 +23,13 @@ const HomeStackNavigator = () => {
         component={PlayThisScreen}
         options={{
           title: "Play this game",
+        }}
+      />
+      <RootStack.Screen
+        name="FavGameListScreen"
+        component={FavGameList}
+        options={{
+          title: "Display all Fav games",
         }}
       />
     </RootStack.Navigator>

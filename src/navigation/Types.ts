@@ -8,6 +8,7 @@ export type RootStackParamList = {
   EditScreen: { id: string };
   PlayThisFavScreen: undefined;
   GameListScreen: undefined;
+  FavGameListScreen: undefined;
 };
 
 export type SelectScreenRootProps = RouteProp<RootStackParamList, "SelectScreen">;
