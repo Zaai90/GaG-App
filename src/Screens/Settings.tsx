@@ -23,14 +23,14 @@ const Settings = ({ navigation }: Props) => {
         <Text>Settings Screen Options</Text>
         <Button title="Sound" onPress={() => {
           setisSoundOn(prev => !prev);
-         isSoundOn ? alert("Ljudet är på") : alert("ljudet är av")}}  />
+         isSoundOn ? alert("Ljud är på") : alert("Ljud är av")}}  />
         <Button title="Vibration" onPress={() => {
           setisVibrationOn(prev => !prev);
           isVibrationOn ? alert("Vibration är på") : alert("Vibration är av") 
           }} />
         <Button title="Notifications" onPress={() => {
           setisNotificationsOn(prev => !prev);
-          isNotificationsOn ? alert("Notifications är på") : alert("Notifications är av")
+          isNotificationsOn ? alert("Notifikationer är på") : alert("Notifikationer är av")
         }} />
         <Text>
           Brightness
