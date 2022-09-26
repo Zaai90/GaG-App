@@ -1,12 +1,12 @@
 import { RouteProp } from "@react-navigation/native";
 export type RootStackParamList = {
   Home: undefined;
-  PlayThisScreen: undefined;
   Settings: undefined;
+  PlayThisScreen: undefined;
   SelectScreen: undefined;
   AddScreen: undefined;
   EditScreen: { id: string };
-  FavoriteScreen: undefined;
+  PlayThisFavScreen: undefined;
   GameListScreen: undefined;
 };
 
