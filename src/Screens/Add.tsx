@@ -21,6 +21,12 @@ const AddScreen = ({ navigation }: Props) => {
           navigation.navigate("GameListScreen");
         }}
       />
+      <Button
+        title="Home"
+        onPress={() => {
+          navigation.navigate("Home");
+        }}
+      />
     </View>
   );
 };
