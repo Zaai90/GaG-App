@@ -10,7 +10,6 @@ const PlayThis = ({ navigation }: Props) => {
     <View>
       <Text>Play this screen </Text>
       <Button
-
         title='Settings'
         onPress={() => {
           navigation.navigate("Settings");
