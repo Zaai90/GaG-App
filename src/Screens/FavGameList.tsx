@@ -5,7 +5,7 @@ import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "FavGameListScreen">;
 
-const FavGameList = ({ navigation }: Props) => {
+const FavGameListScreen = ({ navigation }: Props) => {
   return (
     <View>
       <Text>Show all fav games</Text>
@@ -13,4 +13,4 @@ const FavGameList = ({ navigation }: Props) => {
   );
 };
 
-export default FavGameList;
+export default FavGameListScreen;
