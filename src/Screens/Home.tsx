@@ -5,7 +5,7 @@ import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 
-const HomeScreen = ({ navigation }: Props) => {
+const Home = ({ navigation }: Props) => {
   return (
     <View>
       <Text>Home Screen</Text>
@@ -18,29 +18,29 @@ const HomeScreen = ({ navigation }: Props) => {
       <Button
         title="GaG me!😘"
         onPress={() => {
-          navigation.navigate("PlayThisScreen");
+          navigation.navigate("PlayThis");
         }}
       />
       <Button
         title="Gag me this Fav😊"
         onPress={() => {
-          navigation.navigate("PlayThisFavScreen");
+          navigation.navigate("PlayThisFav");
         }}
       />
       <Button
         title="List of your games"
         onPress={() => {
-          navigation.navigate("GameListScreen");
+          navigation.navigate("GameList");
         }}
       />
       <Button
         title="List of your favorite games"
         onPress={() => {
-          navigation.navigate("FavGameListScreen");
+          navigation.navigate("FavGameList");
         }}
       />
     </View>
   );
 };
 
-export default HomeScreen;
+export default Home;

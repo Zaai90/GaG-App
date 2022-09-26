@@ -1,11 +1,11 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AddScreen from "../Screens/Add";
-import EditScreen from "../Screens/Edit";
-import FavGameListScreen from "../Screens/FavGameList";
-import GameListScreen from "../Screens/GameList";
-import HomeScreen from "../Screens/Home";
-import PlayThisScreen from "../Screens/PlayThis";
-import PlayThisFavScreen from "../Screens/PlayThisFav";
+import Add from "../Screens/Add";
+import Edit from "../Screens/Edit";
+import FavGameList from "../Screens/FavGameList";
+import GameList from "../Screens/GameList";
+import Home from "../Screens/Home";
+import PlayThis from "../Screens/PlayThis";
+import PlayThisFav from "../Screens/PlayThisFav";
 import Settings from "../Screens/Settings";
 import { RootStackParamList } from "./types";
 
@@ -14,47 +14,47 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 const HomeStackNavigator = () => {
   return (
     <RootStack.Navigator>
-      <RootStack.Screen name="Home" component={HomeScreen} />
+      <RootStack.Screen name="Home" component={Home} />
       <RootStack.Screen name="Settings" component={Settings} />
       <RootStack.Screen
-        name="PlayThisFavScreen"
-        component={PlayThisFavScreen}
+        name="PlayThisFav"
+        component={PlayThisFav}
         options={{
           title: "Play this Fav game",
         }}
       />
       <RootStack.Screen
-        name="PlayThisScreen"
-        component={PlayThisScreen}
+        name="PlayThis"
+        component={PlayThis}
         options={{
           title: "Play this game",
         }}
       />
       <RootStack.Screen
-        name="GameListScreen"
-        component={GameListScreen}
+        name="GameList"
+        component={GameList}
         options={{
           title: "List of all your games",
         }}
       />
       <RootStack.Screen
-        name="FavGameListScreen"
-        component={FavGameListScreen}
+        name="FavGameList"
+        component={FavGameList}
         options={{
           title: "Display all Fav games",
         }}
       />
       <RootStack.Screen
-        name="AddScreen"
-        component={AddScreen}
+        name="Add"
+        component={Add}
         options={{
           title: "Add game",
         }}
       />
       <RootStack.Screen
-        name="EditScreen"
-        component={EditScreen}
-        options={({ route }) => ({ title: "EditScreen" + route.params.id })}
+        name="Edit"
+        component={Edit}
+        options={({ route }) => ({ title: "Edit" + route.params.id })}
       />
     </RootStack.Navigator>
   );
