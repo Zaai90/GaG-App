@@ -9,4 +9,8 @@ export type RootStackParamList = {
   FavGameList: undefined;
 };
 
-// export type SelectScreenRootProps = RouteProp<RootStackParamList, "SelectScreen">;
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList extends RootStackParamList {}
+  }
+}
