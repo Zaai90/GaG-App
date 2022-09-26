@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import EditScreen from "../Screens/EditScreen";
 import FavGameListScreen from "../Screens/FavGameList";
 import GameListScreen from "../Screens/GameListScreen";
 import HomeScreen from "../Screens/Home";
@@ -41,6 +42,11 @@ const HomeStackNavigator = () => {
         options={{
           title: "Display all Fav games",
         }}
+      />
+      <RootStack.Screen
+        name="EditScreen"
+        component={EditScreen}
+        options={({ route }) => ({ title: "EditGame" + route.params.id })}
       />
     </RootStack.Navigator>
   );
