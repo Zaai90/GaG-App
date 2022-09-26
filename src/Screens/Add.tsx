@@ -10,19 +10,19 @@ const Add = ({ navigation }: Props) => {
     <View>
       <Text>Add game</Text>
       <Button
-        title="Add game"
+        title='Add game'
         onPress={() => {
           navigation.navigate("GameList");
         }}
       />
       <Button
-        title="Cancel"
+        title='Cancel'
         onPress={() => {
           navigation.navigate("GameList");
         }}
       />
       <Button
-        title="Home"
+        title='Home'
         onPress={() => {
           navigation.navigate("Home");
         }}

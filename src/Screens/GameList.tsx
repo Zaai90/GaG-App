@@ -10,25 +10,25 @@ const GameList = ({ navigation, route }: Props) => {
     <View>
       <Text>Game list screen </Text>
       <Button
-        title="Add game"
+        title='Add game'
         onPress={() => {
           navigation.navigate("Add");
         }}
       />
       <Button
-        title="Settings"
+        title='Settings'
         onPress={() => {
           navigation.navigate("Settings");
         }}
       />
       <Button
-        title="Home"
+        title='Home'
         onPress={() => {
           navigation.navigate("Home");
         }}
       />
       <Button
-        title="Edit"
+        title='Edit'
         onPress={() => {
           navigation.navigate("Edit", { id: "1", path: "/" + route.name });
         }}

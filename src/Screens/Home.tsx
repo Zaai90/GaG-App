@@ -10,31 +10,31 @@ const Home = ({ navigation }: Props) => {
     <View>
       <Text>Home Screen</Text>
       <Button
-        title="Settings"
+        title='Settings'
         onPress={() => {
           navigation.navigate("Settings");
         }}
       />
       <Button
-        title="GaG me!😘"
+        title='GaG me!😘'
         onPress={() => {
           navigation.navigate("PlayThis");
         }}
       />
       <Button
-        title="Gag me this Fav😊"
+        title='Gag me this Fav😊'
         onPress={() => {
           navigation.navigate("PlayThisFav");
         }}
       />
       <Button
-        title="List of your games"
+        title='List of your games'
         onPress={() => {
           navigation.navigate("GameList");
         }}
       />
       <Button
-        title="List of your favorite games"
+        title='List of your favorite games'
         onPress={() => {
           navigation.navigate("FavGameList");
         }}

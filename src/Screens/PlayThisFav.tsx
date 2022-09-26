@@ -10,13 +10,13 @@ const PlayThisFav = ({ navigation }: Props) => {
     <View>
       <Text>Play this favorite screen</Text>
       <Button
-        title="Settings"
+        title='Settings'
         onPress={() => {
           navigation.navigate("Settings");
         }}
       />
       <Button
-        title="Home"
+        title='Home'
         onPress={() => {
           navigation.navigate("Home");
         }}
