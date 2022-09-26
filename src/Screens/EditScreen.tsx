@@ -9,6 +9,7 @@ const EditScreen = ({ navigation, route }: Props) => {
   return (
     <View>
       <Text>Edit Screen</Text>
+      <Text>{route.params.id}</Text>
     </View>
   );
 };

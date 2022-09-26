@@ -46,7 +46,7 @@ const HomeStackNavigator = () => {
       <RootStack.Screen
         name="EditScreen"
         component={EditScreen}
-        options={({ route }) => ({ title: "EditGame" + route.params.id })}
+        options={({ route }) => ({ title: "EditScreen" + route.params.id })}
       />
     </RootStack.Navigator>
   );
