@@ -5,7 +5,7 @@ import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "GameListScreen">;
 
-const GameListScreen = ({ navigation }: Props) => {
+const GameListScreen = ({ navigation, route }: Props) => {
   return (
     <View>
       <Text>Game list screen </Text>
@@ -25,6 +25,12 @@ const GameListScreen = ({ navigation }: Props) => {
         title="Home"
         onPress={() => {
           navigation.navigate("Home");
+        }}
+      />
+      <Button
+        title="Edit"
+        onPress={() => {
+          navigation.navigate("EditScreen", { id: "1", path: "/" + route.name });
         }}
       />
     </View>
