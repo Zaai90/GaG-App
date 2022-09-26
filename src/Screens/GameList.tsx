@@ -3,16 +3,16 @@ import React from "react";
 import { Button, Text, View } from "react-native";
 import { RootStackParamList } from "../navigation/types";
 
-type Props = NativeStackScreenProps<RootStackParamList, "GameListScreen">;
+type Props = NativeStackScreenProps<RootStackParamList, "GameList">;
 
-const GameListScreen = ({ navigation, route }: Props) => {
+const GameList = ({ navigation, route }: Props) => {
   return (
     <View>
       <Text>Game list screen </Text>
       <Button
         title='Add game'
         onPress={() => {
-          navigation.navigate("AddScreen");
+          navigation.navigate("Add");
         }}
       />
       <Button
@@ -30,11 +30,11 @@ const GameListScreen = ({ navigation, route }: Props) => {
       <Button
         title='Edit'
         onPress={() => {
-          navigation.navigate("EditScreen", { id: "1", path: "/" + route.name });
+          navigation.navigate("Edit", { id: "1", path: "/" + route.name });
         }}
       />
     </View>
   );
 };
 
-export default GameListScreen;
+export default GameList;

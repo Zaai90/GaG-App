@@ -3,9 +3,9 @@ import React from "react";
 import { Button, Text, View } from "react-native";
 import { RootStackParamList } from "../navigation/types";
 
-type Props = NativeStackScreenProps<RootStackParamList, "EditScreen">;
+type Props = NativeStackScreenProps<RootStackParamList, "Edit">;
 
-const EditScreen = ({ navigation, route }: Props) => {
+const Edit = ({ navigation, route }: Props) => {
   return (
     <View>
       <Text>Edit Screen</Text>
@@ -13,13 +13,13 @@ const EditScreen = ({ navigation, route }: Props) => {
       <Button
         title='Save changes'
         onPress={() => {
-          navigation.navigate("GameListScreen");
+          navigation.navigate("GameList");
         }}
       />
       <Button
         title='Cancel'
         onPress={() => {
-          navigation.navigate("GameListScreen");
+          navigation.navigate("GameList");
         }}
       />
       <Button
@@ -32,4 +32,4 @@ const EditScreen = ({ navigation, route }: Props) => {
   );
 };
 
-export default EditScreen;
+export default Edit;

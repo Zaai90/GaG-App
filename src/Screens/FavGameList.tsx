@@ -3,9 +3,9 @@ import React from "react";
 import { Button, Text, View } from "react-native";
 import { RootStackParamList } from "../navigation/types";
 
-type Props = NativeStackScreenProps<RootStackParamList, "FavGameListScreen">;
+type Props = NativeStackScreenProps<RootStackParamList, "FavGameList">;
 
-const FavGameListScreen = ({ navigation }: Props) => {
+const FavGameList = ({ navigation }: Props) => {
   return (
     <View>
       <Text>Show all fav games</Text>
@@ -25,4 +25,4 @@ const FavGameListScreen = ({ navigation }: Props) => {
   );
 };
 
-export default FavGameListScreen;
+export default FavGameList;

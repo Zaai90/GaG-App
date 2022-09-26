@@ -3,13 +3,14 @@ import React from "react";
 import { Button, Text, View } from "react-native";
 import { RootStackParamList } from "../navigation/types";
 
-type Props = NativeStackScreenProps<RootStackParamList, "PlayThisScreen">;
+type Props = NativeStackScreenProps<RootStackParamList, "PlayThis">;
 
-const PlayThisScreen = ({ navigation }: Props) => {
+const PlayThis = ({ navigation }: Props) => {
   return (
     <View>
       <Text>Play this screen </Text>
       <Button
+
         title='Settings'
         onPress={() => {
           navigation.navigate("Settings");
@@ -25,4 +26,4 @@ const PlayThisScreen = ({ navigation }: Props) => {
   );
 };
 
-export default PlayThisScreen;
+export default PlayThis;
