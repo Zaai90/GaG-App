@@ -9,10 +9,18 @@ const PlayThisScreen = ({ navigation }: Props) => {
   return (
     <View>
       <Text>Play this screen </Text>
-      <Button title="Settings" onPress={() => { navigation.navigate("Settings");}} />
-      <Button title="Home"
-       onPress={() => {
-        navigation.navigate("Home")}}/>
+      <Button
+        title='Settings'
+        onPress={() => {
+          navigation.navigate("Settings");
+        }}
+      />
+      <Button
+        title='Home'
+        onPress={() => {
+          navigation.navigate("Home");
+        }}
+      />
     </View>
   );
 };

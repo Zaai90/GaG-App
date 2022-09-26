@@ -10,7 +10,7 @@ const Settings = ({ navigation }: Props) => {
     <View>
       <Text>Settings screen</Text>
       <Button
-        title="Home"
+        title='Home'
         onPress={() => {
           navigation.navigate("Home");
         }}

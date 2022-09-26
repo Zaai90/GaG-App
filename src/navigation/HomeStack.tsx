@@ -14,45 +14,45 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 const HomeStackNavigator = () => {
   return (
     <RootStack.Navigator>
-      <RootStack.Screen name="Home" component={HomeScreen} />
-      <RootStack.Screen name="Settings" component={Settings} />
+      <RootStack.Screen name='Home' component={HomeScreen} />
+      <RootStack.Screen name='Settings' component={Settings} />
       <RootStack.Screen
-        name="PlayThisFavScreen"
+        name='PlayThisFavScreen'
         component={PlayThisFavScreen}
         options={{
           title: "Play this Fav game",
         }}
       />
       <RootStack.Screen
-        name="PlayThisScreen"
+        name='PlayThisScreen'
         component={PlayThisScreen}
         options={{
           title: "Play this game",
         }}
       />
       <RootStack.Screen
-        name="GameListScreen"
+        name='GameListScreen'
         component={GameListScreen}
         options={{
           title: "List of all your games",
         }}
       />
       <RootStack.Screen
-        name="FavGameListScreen"
+        name='FavGameListScreen'
         component={FavGameListScreen}
         options={{
           title: "Display all Fav games",
         }}
       />
       <RootStack.Screen
-        name="AddScreen"
+        name='AddScreen'
         component={AddScreen}
         options={{
           title: "Add game",
         }}
       />
       <RootStack.Screen
-        name="EditScreen"
+        name='EditScreen'
         component={EditScreen}
         options={({ route }) => ({ title: "EditScreen" + route.params.id })}
       />

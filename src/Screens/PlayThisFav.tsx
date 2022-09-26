@@ -9,8 +9,18 @@ const PlayThisFavScreen = ({ navigation }: Props) => {
   return (
     <View>
       <Text>Play this favorite screen</Text>
-      <Button title="Settings" onPress={() => { navigation.navigate("Settings"); }} />
-      <Button title="Home" onPress={() => { navigation.navigate("Home"); }} />
+      <Button
+        title='Settings'
+        onPress={() => {
+          navigation.navigate("Settings");
+        }}
+      />
+      <Button
+        title='Home'
+        onPress={() => {
+          navigation.navigate("Home");
+        }}
+      />
     </View>
   );
 };

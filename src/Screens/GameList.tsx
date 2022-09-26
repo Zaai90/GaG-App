@@ -10,25 +10,25 @@ const GameListScreen = ({ navigation, route }: Props) => {
     <View>
       <Text>Game list screen </Text>
       <Button
-        title="Add game"
+        title='Add game'
         onPress={() => {
           navigation.navigate("AddScreen");
         }}
       />
       <Button
-        title="Settings"
+        title='Settings'
         onPress={() => {
           navigation.navigate("Settings");
         }}
       />
       <Button
-        title="Home"
+        title='Home'
         onPress={() => {
           navigation.navigate("Home");
         }}
       />
       <Button
-        title="Edit"
+        title='Edit'
         onPress={() => {
           navigation.navigate("EditScreen", { id: "1", path: "/" + route.name });
         }}
