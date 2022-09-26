@@ -3,5 +3,6 @@ export type Game = {
   title: string;
   genre: string;
   score: number;
+  developer: string;
   isFavourite: boolean;
 };
