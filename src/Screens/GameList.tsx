@@ -1,14 +1,23 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { Button, Text, View } from "react-native";
+import GameCard from "../components/GameCard";
+import mockData from "../Data/MockData";
 import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "GameList">;
 
 const GameList = ({ navigation, route }: Props) => {
+  // const { getAllGames } = useGameContext();
+
   return (
     <View>
       <Text>Game list screen </Text>
+
+      {mockData.map((game) => (
+        <GameCard key={game.id} game={game} />
+      ))}
+
       <Button
         title='Add game'
         onPress={() => {
