@@ -1,19 +1,19 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { Button, StyleSheet } from 'react-native';
-import { RootStackParamList } from '../navigation/types';
+import { OmitGotoParamList, RootStackParamList } from '../navigation/types';
+
 
 type Props =
     {
-        navigator: NativeStackScreenProps<RootStackParamList, "Home">;
+        navigator: NativeStackScreenProps<RootStackParamList, keyof OmitGotoParamList>;
+        to: keyof OmitGotoParamList;
         title: string
-        name: keyof RootStackParamList
-        id?: string;
     }
 
-const GotoButton = ({ navigator, name, id = "", title }: Props) => {
+const GotoButton = ({ navigator, title, to }: Props) => {
     return (
-        <Button title={title} onPress={() => { name === "Edit" ? navigator.navigation.navigate("Edit", { id }) : navigator.navigation.navigate(name) }} />
+        <Button title={title} onPress={() => { navigator.navigation.navigate(to) }} />
     )
 }
 
