@@ -12,7 +12,7 @@ const Home = (navigator: Props) => {
       <Text>Home Screen</Text>
       <GotoButton title='Settings' name='Settings' navigator={navigator} />
       <GotoButton title='GaG me!😘' name='PlayThis' navigator={navigator} />
-      <GotoButton title='Gag a Fav😊' name='PlayThisFav' navigator={navigator} />
+      <GotoButton title='GaG a Fav😊' name='PlayThisFav' navigator={navigator} />
       <GotoButton title='List of your games' name='GameList' navigator={navigator} />
       <GotoButton title='List of your favorite games' name='FavGameList' navigator={navigator} />
     </View>
