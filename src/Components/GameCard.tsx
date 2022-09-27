@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { Game } from "../Data/Game";
+import { Game } from "../Data/game";
 
 interface Props {
   game: Game;

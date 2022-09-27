@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Button, Text, View, TextInput, StyleSheet } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Edit">;
@@ -14,26 +14,10 @@ const Edit = ({ navigation, route }: Props) => {
     <View>
       <Text>Edit Screen</Text>
       <Text>{route.params.id}</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
-      />
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText2}
-        value={text2}
-      />
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText3}
-        value={text3}
-      />
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText4}
-        value={text4}
-      />
+      <TextInput style={styles.input} onChangeText={onChangeText} value={text} />
+      <TextInput style={styles.input} onChangeText={onChangeText2} value={text2} />
+      <TextInput style={styles.input} onChangeText={onChangeText3} value={text3} />
+      <TextInput style={styles.input} onChangeText={onChangeText4} value={text4} />
       <Button
         title='Save changes'
         onPress={() => {
