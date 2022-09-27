@@ -1,7 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { Text, View } from "react-native";
-import GotoButton from "../Components1/GotoButton";
+import GotoButton from "../Components/GotoButton";
 import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;

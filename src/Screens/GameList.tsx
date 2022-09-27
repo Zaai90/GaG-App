@@ -1,8 +1,8 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { Pressable, Text, View } from "react-native";
-import GameCard from "../Components1/GameCard";
-import GotoButton from "../Components1/GotoButton";
+import GameCard from "../Components/GameCard";
+import GotoButton from "../Components/GotoButton";
 import mockData from "../Data/MockData";
 import { RootStackParamList } from "../navigation/types";
 
