@@ -8,7 +8,7 @@ import Home from "../Screens/Home";
 import PlayThis from "../Screens/PlayThis";
 import PlayThisFav from "../Screens/PlayThisFav";
 import Settings from "../Screens/Settings";
-import { RootStackParamList } from "./types1";
+import { RootStackParamList } from "./types";
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 

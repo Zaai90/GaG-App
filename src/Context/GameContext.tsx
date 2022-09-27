@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
-import { Game } from "../Data/game1";
-import { mockData } from "../Data/mockData1";
+import { Game } from "../Data/game";
+import { mockData } from "../Data/mockData";
 
 interface GameProviderProps {
   children: ReactNode;
