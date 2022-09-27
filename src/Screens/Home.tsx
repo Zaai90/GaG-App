@@ -10,7 +10,6 @@ const Home = (navigator: Props) => {
   return (
     <View>
       <Text>Home Screen</Text>
-      <GotoButton title='Settings' to='Settings' navigator={navigator} />
       <GotoButton title='GaG me!😘' to='PlayThis' navigator={navigator} />
       <GotoButton title='GaG a Fav😊' to='PlayThisFav' navigator={navigator} />
       <GotoButton title='List of your games' to='GameList' navigator={navigator} />
