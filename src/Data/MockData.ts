@@ -1,10 +1,12 @@
-const mockData = [
+import { Game } from "./Game";
+
+const mockData: Game[] = [
   {
     id: "1",
     title: "Warcraft 3",
     genre: "RTS",
     score: 4,
-    Developer: "Blizzard",
+    developer: "Blizzard",
     isFavourite: false,
   },
   {
@@ -12,6 +14,7 @@ const mockData = [
     title: "Warlords Battlecry 3",
     genre: "RTS",
     score: 5,
+    developer: "Infinity Plus Two",
     isFavourite: true,
   },
   {
@@ -19,7 +22,7 @@ const mockData = [
     title: "Total War: WARHAMMER II",
     genre: "Grand strategy",
     score: 3,
-    Developer: "Infinite Interactive",
+    developer: "Infinite Interactive",
     isFavourite: false,
   },
   {
@@ -27,7 +30,7 @@ const mockData = [
     title: "CS: GO",
     genre: "FPS",
     score: 4,
-    Developer: "Valve",
+    developer: "Valve",
     isFavourite: false,
   },
   {
@@ -35,7 +38,7 @@ const mockData = [
     title: "Hunt: Showdown",
     genre: "FPS",
     score: 5,
-    Developer: "Crytek",
+    developer: "Crytek",
     isFavourite: true,
   },
   {
@@ -43,7 +46,7 @@ const mockData = [
     title: "Heroes of might and magic III",
     genre: "Turn based",
     score: 4,
-    Developer: "New World Computing",
+    developer: "New World Computing",
     isFavourite: true,
   },
   {
@@ -51,7 +54,7 @@ const mockData = [
     title: "Raft",
     genre: "Survival",
     score: 1,
-    Developer: "Redbeet Interactive",
+    developer: "Redbeet Interactive",
     isFavourite: false,
   },
   {
@@ -59,7 +62,7 @@ const mockData = [
     title: "Diablo II",
     genre: "action RPG",
     score: 5,
-    Developer: "Blizzard North",
+    developer: "Blizzard North",
     isFavourite: false,
   },
 ];
