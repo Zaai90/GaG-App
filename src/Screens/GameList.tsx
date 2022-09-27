@@ -3,8 +3,8 @@ import React from "react";
 import { Pressable, Text, View } from "react-native";
 import GameCard from "../Components/GameCard";
 import GotoButton from "../Components/GotoButton";
-import mockData from "../Data/MockData";
-import { RootStackParamList } from "../navigation/types";
+import mockData from "../Data/mockData1";
+import { RootStackParamList } from "../navigation/types1";
 
 type Props = NativeStackScreenProps<RootStackParamList, "GameList">;
 

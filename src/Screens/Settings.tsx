@@ -2,7 +2,7 @@ import Slider from "@react-native-community/slider";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { Button, Text, View } from "react-native";
-import { RootStackParamList } from "../navigation/types";
+import { RootStackParamList } from "../navigation/types1";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Settings">;
 

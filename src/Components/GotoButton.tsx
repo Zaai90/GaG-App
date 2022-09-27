@@ -1,7 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { Button, StyleSheet } from "react-native";
-import { OmitGotoParamList, RootStackParamList } from "../navigation/types";
+import { OmitGotoParamList, RootStackParamList } from "../navigation/types1";
 
 type Props = {
   navigator: NativeStackScreenProps<RootStackParamList, keyof OmitGotoParamList>;
