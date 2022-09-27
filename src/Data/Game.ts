@@ -6,3 +6,5 @@ export type Game = {
   developer: string;
   isFavourite: boolean;
 };
+
+export type GameCreate = Omit<Game, "id">;

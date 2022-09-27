@@ -1,6 +1,6 @@
 import { Game } from "./Game";
 
-const mockData: Game[] = [
+export const mockData: Game[] = [
   {
     id: "1",
     title: "Warcraft 3",
