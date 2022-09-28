@@ -1,17 +1,28 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Button, StyleSheet, View } from "react-native";
 import { useGameContext } from "../Context/GameContext";
+import { Game } from "../Data/game";
 import GameCard from "./GameCard";
 
 const GAG = () => {
   const { games } = useGameContext();
-  const gameId = Math.floor(Math.random() * games.length + 1).toLocaleString();
   const { getGameById } = useGameContext();
-  const game = getGameById(gameId);
+
+  const [rerender, setRerender] = useState<boolean>(true);
+  const [game, setGame] = React.useState<Game>();
+
+  useEffect(() => {
+    if (rerender) {
+      const gameId = Math.floor(Math.random() * games.length + 1).toLocaleString();
+      setGame(getGameById(gameId));
+      setRerender(false);
+    }
+  }, [rerender, game]);
 
   return (
-    <View key={game.id} style={styles.cardContainer}>
-      <GameCard game={game} />
+    <View key={game?.id} style={styles.cardContainer}>
+      {game ? <GameCard game={game} /> : null}
+      <Button title='GaG Again😒' onPress={() => setRerender(true)} />
     </View>
   );
 };
