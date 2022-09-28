@@ -1,13 +1,14 @@
 import Slider from "@react-native-community/slider";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Button, Text, View } from "react-native";
+import { Button, Switch, Text, View, StyleSheet, StyleProp, Pressable } from "react-native";
 import { RootStackParamList } from "../navigation/types";
+import { VibrationSuccess } from "../Components/HapticButton";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Settings">;
 
 const Settings = ({ navigation }: Props) => {
-  const [isSoundOn, setisSoundOn] = React.useState(true);
+  const [isSoundOn, setisSoundOn] = React.useState<boolean>(true);
   const [isVibrationOn, setisVibrationOn] = React.useState(true);
   const [isNotificationsOn, setisNotificationsOn] = React.useState(true);
   return (
@@ -18,30 +19,26 @@ const Settings = ({ navigation }: Props) => {
           navigation.navigate("Home");
         }}
       />
-
-      <View>
+      
         <Text>Settings Screen Options</Text>
-        <Button
-          title='Sound'
-          onPress={() => {
-            setisSoundOn((prev) => !prev);
-            isSoundOn ? alert("Ljud är på") : alert("Ljud är av");
-          }}
-        />
-        <Button
-          title='Vibration'
-          onPress={() => {
-            setisVibrationOn((prev) => !prev);
-            isVibrationOn ? alert("Vibration är på") : alert("Vibration är av");
-          }}
-        />
-        <Button
-          title='Notifications'
-          onPress={() => {
-            setisNotificationsOn((prev) => !prev);
-            isNotificationsOn ? alert("Notifikationer är på") : alert("Notifikationer är av");
-          }}
-        />
+
+        <View style={settingsStyle.settingsContainer}>
+        <Text style={settingsStyle.text}>Sound</Text>
+        <Switch style={settingsStyle.switch}  value={isSoundOn} onChange={() => {
+          setisSoundOn((prev) => {prev == false ? VibrationSuccess() : null; return !prev;});
+        }}/>
+        </View>
+
+        <View style={settingsStyle.settingsContainer}>
+        <Text style={settingsStyle.text}>Notifications</Text>
+        <Switch style={settingsStyle.switch} value={isNotificationsOn} onChange={() => setisNotificationsOn((prev) => !prev)}/>
+        </View>
+
+        <View style={settingsStyle.settingsContainer}>
+        <Text style={settingsStyle.text}>Vibration</Text>
+        <Switch style={settingsStyle.switch} value={isVibrationOn} onChange={() => setisVibrationOn((prev) => !prev)}/>
+        </View>
+
         <Text>
           Brightness
           <Slider
@@ -52,7 +49,7 @@ const Settings = ({ navigation }: Props) => {
             maximumTrackTintColor='#000000'
           />
         </Text>
-        <Button
+        <Button 
           title='Delete Account'
           onPress={() => {
             navigation.navigate("Home");
@@ -60,8 +57,47 @@ const Settings = ({ navigation }: Props) => {
           }}
         />
       </View>
-    </View>
   );
 };
 
 export default Settings;
+
+const settingsStyle = StyleSheet.create({
+
+  switch: {
+    alignSelf: 'flex-end',
+    flexGrow: 1,
+    flexBasis: 150,
+    marginHorizontal: 55,
+    paddingVertical: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: 10,
+    borderRadius: 10,
+    elevation: 3,
+    width: 150,
+    height: 50,
+    Color: 'blue',
+  },
+  text: {
+    flexDirection: 'column',
+    fontSize: 16,
+    paddingTop: 5,
+    lineHeight: 15,
+    marginTop: 5,
+    paddingLeft: 10,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: "black",
+  },
+  settingsContainer: {
+    minHeight: 55,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#F2F2F2',
+  },
+  deletionButton: {
+    marginVertical: 5,
+  },
+});
