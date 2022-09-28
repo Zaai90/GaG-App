@@ -13,16 +13,18 @@ import Settings from "../Screens/Settings";
 import { RootStackParamList } from "./types";
 import HomeButton from "../Components/Header/HomeButton";
 import SettingsButton from "../Components/Header/SettingsButton";
+import TitlePlacer from "../Components/Header/TitlePlacer";
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const HomeStackNavigator = () => {
   return (
     <RootStack.Navigator  screenOptions={{ 
-      headerBackground: () => <View style={{ backgroundColor: '#876796', flex: 1 }} >
+      headerBackground: () => <View style={{ backgroundColor: '#876796', flex: 1, paddingLeft: 8 }} >
       </View>,
       headerRight: () => <HomeButton />,
       headerLeft: () => <SettingsButton />,
+      headerTitle: () => <TitlePlacer />,      
     }}>
       <RootStack.Screen name='Home' component={Home} />
       <RootStack.Screen name='Settings' component={Settings} />
