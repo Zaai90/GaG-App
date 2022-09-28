@@ -2,8 +2,6 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
-// const navigation = useNavigation();
-
 const TitlePlacer = () => {
     const route = useRoute();
     return (
