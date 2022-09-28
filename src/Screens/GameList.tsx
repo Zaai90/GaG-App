@@ -3,24 +3,28 @@ import React from "react";
 import { Pressable, Text, View } from "react-native";
 import GameCard from "../Components/GameCard";
 import GotoButton from "../Components/GotoButton";
-import mockData from "../Data/mockData";
+import { useGameContext } from "../Context/GameContext";
 import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "GameList">;
 
-const GameList = (navigator: Props) => (
-  <View>
-    <Text>Game list screen </Text>
+const GameList = (navigator: Props) => {
+  const { games } = useGameContext();
 
-    {mockData.map((game) => (
-      <GameCard key={game.id} game={game} />
-    ))}
+  return (
+    <View>
+      <Text>Game list screen </Text>
 
-    <GotoButton title='Add game' to='Add' navigator={navigator} />
-    <Pressable>
-      <Text>Edit</Text>
-    </Pressable>
-  </View>
-);
+      {games.map((game) => (
+        <GameCard key={game.id} game={game} />
+      ))}
+
+      <GotoButton title='Add game' to='Add' navigator={navigator} />
+      <Pressable>
+        <Text>Edit</Text>
+      </Pressable>
+    </View>
+  );
+};
 
 export default GameList;
