@@ -1,5 +1,7 @@
+import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
+import { View, StyleSheet, Pressable } from "react-native";
 import Add from "../Screens/Add";
 import Edit from "../Screens/Edit";
 import FavGameList from "../Screens/FavGameList";
@@ -9,12 +11,19 @@ import PlayThis from "../Screens/PlayThis";
 import PlayThisFav from "../Screens/PlayThisFav";
 import Settings from "../Screens/Settings";
 import { RootStackParamList } from "./types";
+import HomeButton from "../Components/HomeButton";
+import SettingsButton from "../Components/Header/SettingsButton";
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const HomeStackNavigator = () => {
   return (
-    <RootStack.Navigator>
+    <RootStack.Navigator  screenOptions={{ 
+      headerBackground: () => <View style={{ backgroundColor: '#876796', flex: 1 }} >
+      </View>,
+      headerLeft: () => <SettingsButton />,
+      headerRight: () => <HomeButton />
+    }}>
       <RootStack.Screen name='Home' component={Home} />
       <RootStack.Screen name='Settings' component={Settings} />
       <RootStack.Screen
@@ -62,3 +71,11 @@ const HomeStackNavigator = () => {
 };
 
 export default HomeStackNavigator;
+
+const styles = StyleSheet.create({
+  SettingsButton: {
+    Image: "",
+    width: 50,
+    height: 50,
+  },
+});
