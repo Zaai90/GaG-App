@@ -4,7 +4,7 @@ import { View, StyleSheet, Text } from "react-native";
 
 // const navigation = useNavigation();
 
-const Title = () => {
+const TitlePlacer = () => {
     const route = useRoute();
     return (
         <View style={styles.PlaceTitle}>
@@ -13,7 +13,7 @@ const Title = () => {
     )
 }
 
-export default Title;
+export default TitlePlacer;
 
 const styles = StyleSheet.create({
     PlaceTitle: {
