@@ -1,26 +1,16 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Button, Text, View } from "react-native";
+import { Button, View } from "react-native";
+import GAG from "../Components/GetAGame";
 import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "PlayThis">;
 
-const PlayThis = ({ navigation }: Props) => {
+const PlayThis = (navigator: Props) => {
   return (
     <View>
-      <Text>Play this screen </Text>
-      <Button
-        title='Settings'
-        onPress={() => {
-          navigation.navigate("Settings");
-        }}
-      />
-      <Button
-        title='Home'
-        onPress={() => {
-          navigation.navigate("Home");
-        }}
-      />
+      <GAG />
+      <Button title={"Go back"} onPress={() => navigator.navigation.goBack()} />
     </View>
   );
 };
