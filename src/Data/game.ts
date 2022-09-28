@@ -5,6 +5,7 @@ export type Game = {
   score: number;
   developer: string;
   isFavourite: boolean;
+  imgUrl: string;
 };
 
 export type GameCreate = Omit<Game, "id">;
