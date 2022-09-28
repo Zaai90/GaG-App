@@ -3,7 +3,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { Button, Switch, Text, View, StyleSheet, StyleProp, Pressable } from "react-native";
 import { RootStackParamList } from "../navigation/types";
-import { VibrationSuccess } from "../Components/HapticButton";
+import { VibrationSuccess } from "../Components/Haptics";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Settings">;
 
@@ -49,8 +49,8 @@ const Settings = ({ navigation }: Props) => {
             style={{ width: 350, height: 40 }}
             minimumValue={0}
             maximumValue={1}
-            minimumTrackTintColor='#FFFFFF'
-            maximumTrackTintColor='#000000'
+            minimumTrackTintColor='#0FE2FF'
+            maximumTrackTintColor='#3837BA'
           />
         </Text>
         <Button 

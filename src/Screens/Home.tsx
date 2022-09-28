@@ -3,7 +3,7 @@ import React from "react";
 import { Text, View } from "react-native";
 import GotoButton from "../Components/GotoButton";
 import { RootStackParamList } from "../navigation/types";
-import HapticButton  from "../Components/HapticButton";
+import HapticButton  from "../Components/Haptics";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 
