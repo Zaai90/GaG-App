@@ -1,7 +1,7 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
 import { Pressable } from "react-native";
-import { Octicons } from "@expo/vector-icons";
+import { Octicons, Ionicons } from "@expo/vector-icons";
 
 const SettingsButton = () => {
   const navigation = useNavigation();
@@ -10,7 +10,7 @@ const SettingsButton = () => {
     return (
       <>
         <Pressable onPress={() => navigation.navigate("Settings")}>
-          <Octicons name='gear' size={24} color='black' />
+          <Octicons name='gear' size={21} color='black' />
         </Pressable>
       </>
     );
