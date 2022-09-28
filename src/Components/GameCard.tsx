@@ -9,9 +9,9 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <View>
+      <Image source={{ uri: game.imgUrl }} style={{ width: 50, height: 50 }} />
       <Text style={{ color: "red" }}>{game.title}</Text>
       <Text>{game.developer}</Text>
-      <Image source={{ uri: game.imgUrl }} style={{ width: 50, height: 50 }} />
     </View>
   );
 };
