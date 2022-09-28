@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, StyleSheet, View } from "react-native";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
-import GameCard from "./GameCard";
+import GAGCard from "./GAGCard";
 
 const GAG = () => {
   const { games } = useGameContext();
@@ -21,7 +21,7 @@ const GAG = () => {
 
   return (
     <View key={game?.id} style={styles.cardContainer}>
-      {game ? <GameCard game={game} /> : null}
+      {game ? <GAGCard game={game} /> : null}
       <Button title='GaG Again😒' onPress={() => setRerender(true)} />
     </View>
   );
