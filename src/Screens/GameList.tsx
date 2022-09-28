@@ -3,6 +3,7 @@ import React from "react";
 import { Pressable, Text, View, StyleSheet, ScrollView } from "react-native";
 import GameCard from "../Components/GameCard";
 import GotoButton from "../Components/GotoButton";
+import { useGameContext } from "../Context/GameContext";
 import mockData from "../Data/mockData";
 import { RootStackParamList } from "../navigation/types";
 
@@ -11,8 +12,6 @@ type Props = NativeStackScreenProps<RootStackParamList, "GameList">;
 const GameList = (navigator: Props) => (
   <View>
   <ScrollView contentContainerStyle={styles.container}>
-    {/* <View style={styles.container}> */}
-
     {mockData.map((game) => (
       <View key={game.id} style={styles.cardContainer}>
         <GameCard game={game} />
@@ -20,8 +19,8 @@ const GameList = (navigator: Props) => (
       ))}
   </ScrollView>
   <View style={styles.ButtonBar}>
-    <View style={styles.AddButton}>
-    <GotoButton title='Add game' to='Add' navigator={navigator} />
+    <View>
+    <GotoButton title='Add game' to='Add' navigator={navigator} style={{button: styles.AddButton}}/>
     </View>
     </View>
   </View>
@@ -52,7 +51,9 @@ const styles = StyleSheet.create({
     paddingVertical:10,
   },
   AddButton: {
-    backgroundColor: "#876796",
-    borderRadius: 10,
+    borderRadius: 15,
+    backgroundColor: "#EBD4C2",
+    width: 175,
+
   },
 });
