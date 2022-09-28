@@ -31,12 +31,16 @@ const Settings = ({ navigation }: Props) => {
 
         <View style={settingsStyle.settingsContainer}>
         <Text style={settingsStyle.text}>Notifications</Text>
-        <Switch style={settingsStyle.switch} value={isNotificationsOn} onChange={() => setisNotificationsOn((prev) => !prev)}/>
+        <Switch style={settingsStyle.switch} value={isNotificationsOn} onChange={() => {
+          setisNotificationsOn((prev) => {prev == false ? VibrationSuccess() : null; return !prev;})
+          }}/>
         </View>
 
         <View style={settingsStyle.settingsContainer}>
         <Text style={settingsStyle.text}>Vibration</Text>
-        <Switch style={settingsStyle.switch} value={isVibrationOn} onChange={() => setisVibrationOn((prev) => !prev)}/>
+        <Switch style={settingsStyle.switch} value={isVibrationOn} onChange={() => {
+          setisVibrationOn((prev) => {prev == false ? VibrationSuccess() : null; return !prev;})
+        }}/>
         </View>
 
         <Text>
