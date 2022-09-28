@@ -11,7 +11,7 @@ import PlayThis from "../Screens/PlayThis";
 import PlayThisFav from "../Screens/PlayThisFav";
 import Settings from "../Screens/Settings";
 import { RootStackParamList } from "./types";
-import HomeButton from "../Components/HomeButton";
+import HomeButton from "../Components/Header/HomeButton";
 import SettingsButton from "../Components/Header/SettingsButton";
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -21,8 +21,8 @@ const HomeStackNavigator = () => {
     <RootStack.Navigator  screenOptions={{ 
       headerBackground: () => <View style={{ backgroundColor: '#876796', flex: 1 }} >
       </View>,
+      headerRight: () => <HomeButton />,
       headerLeft: () => <SettingsButton />,
-      headerRight: () => <HomeButton />
     }}>
       <RootStack.Screen name='Home' component={Home} />
       <RootStack.Screen name='Settings' component={Settings} />
