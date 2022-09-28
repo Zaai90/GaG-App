@@ -11,3 +11,5 @@ const HomeButton = () => {
     )
 }
 export default HomeButton;
+
+//Ta bort vid rensing av projekt
