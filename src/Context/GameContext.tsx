@@ -10,8 +10,10 @@ interface GameProviderProps {
 interface IGameContext {
   addGame: (game: GameCreate) => void;
   games: Game[];
+  getFavGames: Game[];
   getGameById: (id: string) => Game;
   deleteGame: (id: string) => void;
+  toggleFav: (id: string) => Game;
 }
 
 const GameContext = createContext({} as IGameContext);
@@ -41,12 +43,36 @@ function GameContextProvider({ children }: GameProviderProps) {
     setGames((currItems) => currItems.filter((item) => item.id !== id));
   }
 
+  function toggleFav(id: string) {
+    const game = games.find((i) => i.id === id);
+    if (game === undefined) {
+      return {} as Game;
+    }
+    if (game.isFavourite == false) {
+      game.isFavourite = true;
+      return game;
+    } else {
+      game.isFavourite = false;
+      return game;
+    }
+  }
+
+  function getFavGames(favgamez) => {
+    const favgamez: Game[];
+
+    console.log("hej");
+    return favgamez;
+  }
+}
+
   return (
     <GameContext.Provider
       value={{
         games,
+        getFavGames,
         addGame,
         getGameById,
+        toggleFav,
         deleteGame,
       }}
     >
