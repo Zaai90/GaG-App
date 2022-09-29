@@ -23,7 +23,7 @@ const GameList = (navigator: Props) => (
           title='Add game'
           to='Add'
           navigator={navigator}
-          style={{ button: styles.AddButton }}
+          style={{ button: styles.AddButton, text: styles.buttonText }}
         />
       </View>
     </View>
@@ -40,13 +40,12 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     paddingHorizontal: 4,
     paddingLeft: 4,
-    paddingBottom: 70,
+    paddingBottom: 85,
   },
   cardContainer: {
-    marginBottom: 5,
+    marginBottom: 15,
   },
   ButtonBar: {
-    flex: 1,
     position: "absolute",
     alignItems: "center",
     backgroundColor: "#876796",
@@ -57,6 +56,9 @@ const styles = StyleSheet.create({
   AddButton: {
     borderRadius: 15,
     backgroundColor: "#EBD4C2",
-    width: 175,
+    width: "80%",
+  },
+  buttonText: {
+    color: "black",
   },
 });
