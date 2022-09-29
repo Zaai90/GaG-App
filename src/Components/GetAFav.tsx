@@ -4,17 +4,17 @@ import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
 import GAGCard from "./GAGCard";
 
-const GetAGame = () => {
-  const { games } = useGameContext();
-  const { getGameById } = useGameContext();
+const GetAFav = () => {
+  const { getFavGames } = useGameContext();
 
   const [rerender, setRerender] = useState<boolean>(true);
   const [game, setGame] = React.useState<Game>();
 
   useEffect(() => {
     if (rerender) {
-      const gameId = Math.floor(Math.random() * games.length + 1).toLocaleString();
-      setGame(getGameById(gameId));
+      const FavGames = getFavGames();
+      const FavGameNumber = Math.floor(Math.random() * FavGames.length);
+      setGame(FavGames[FavGameNumber]);
       setRerender(false);
     }
   }, [rerender, game]);
@@ -22,12 +22,12 @@ const GetAGame = () => {
   return (
     <View key={game?.id} style={styles.cardContainer}>
       {game ? <GAGCard game={game} /> : null}
-      <Button title='GaG Again😒' onPress={() => setRerender(true)} />
+      <Button title='GaG another Fav' onPress={() => setRerender(true)} />
     </View>
   );
 };
 
-export default GetAGame;
+export default GetAFav;
 
 const styles = StyleSheet.create({
   cardContainer: {
