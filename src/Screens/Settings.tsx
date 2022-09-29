@@ -1,16 +1,34 @@
 import Slider from "@react-native-community/slider";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Button, Switch, Text, View, StyleSheet, StyleProp, Pressable } from "react-native";
+import { Button, Switch, Text, View, StyleSheet } from "react-native";
 import { RootStackParamList } from "../navigation/types";
 import { VibrationSuccess } from "../Components/Haptics";
+import { useSettings } from "../Context/SettingContext";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Settings">;
 
+declare global {
+  namespace SettingsState {
+    export interface State {
+      Sound: boolean;
+      Vibration: boolean;
+      Notifications: boolean;
+    }
+  }
+}
+
 const Settings = ({ navigation }: Props) => {
-  const [isSoundOn, setisSoundOn] = React.useState<boolean>(true);
-  const [isVibrationOn, setisVibrationOn] = React.useState(true);
-  const [isNotificationsOn, setisNotificationsOn] = React.useState(true);
+  const {
+    isSoundOn,
+    setIsSoundOn,
+    isNotificationsOn,
+    setIsNotificationsOn,
+    isVibrationOn,
+    setIsVibrationOn,
+    toggleSound,
+  } = useSettings();
+
   return (
     <View>
       <Button
@@ -28,10 +46,9 @@ const Settings = ({ navigation }: Props) => {
           style={settingsStyle.switch}
           value={isSoundOn}
           onChange={() => {
-            setisSoundOn((prev) => {
-              prev == false ? VibrationSuccess() : null;
-              return !prev;
-            });
+            toggleSound();
+            isSoundOn === false ? VibrationSuccess() : null;
+
           }}
         />
       </View>
@@ -42,8 +59,8 @@ const Settings = ({ navigation }: Props) => {
           style={settingsStyle.switch}
           value={isNotificationsOn}
           onChange={() => {
-            setisNotificationsOn((prev) => {
-              prev == false ? VibrationSuccess() : null;
+            setIsNotificationsOn((prev) => {
+              prev === false ? VibrationSuccess() : null;
               return !prev;
             });
           }}
@@ -56,8 +73,8 @@ const Settings = ({ navigation }: Props) => {
           style={settingsStyle.switch}
           value={isVibrationOn}
           onChange={() => {
-            setisVibrationOn((prev) => {
-              prev == false ? VibrationSuccess() : null;
+            setIsVibrationOn((prev) => {
+              prev === false ? VibrationSuccess() : null;
               return !prev;
             });
           }}
