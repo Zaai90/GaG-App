@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   ButtonBar: {
-    flex: 1,
     position: "absolute",
     alignItems: "center",
     backgroundColor: "#876796",
@@ -57,7 +56,7 @@ const styles = StyleSheet.create({
   AddButton: {
     borderRadius: 15,
     backgroundColor: "#EBD4C2",
-    width: 175,
+    width: "80%",
   },
   buttonText: {
     color: "black",

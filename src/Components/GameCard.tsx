@@ -10,8 +10,12 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <View style={style.container}>
-      <View>
-        <Image resizeMode='stretch' source={{ uri: game.imgUrl }} style={style.image} />
+      <View style={style.image}>
+        <Image
+          resizeMode='stretch'
+          source={{ uri: game.imgUrl }}
+          style={{ width: "100%", height: "100%" }}
+        />
       </View>
 
       <View>
@@ -27,7 +31,7 @@ const GameCard = ({ game }: Props) => {
         </View>
 
         <View style={style.score}>
-          <Text style={{ fontSize: 20 }}>🍕🍕🍕🍕🍕</Text>
+          <Text style={{ fontSize: 15 }}>🍕🍕🍕🍕🍕</Text>
         </View>
 
         <View style={style.button}>
@@ -69,12 +73,12 @@ const style = StyleSheet.create({
     textShadowOpacity: 0.2,
   },
   image: {
+    width: "25%",
     height: "100%",
-    width: 100,
   },
   textContainer: {
     paddingLeft: 10,
-    width: 250,
+    width: "68%",
     flexGrow: 1,
   },
   icons: {
