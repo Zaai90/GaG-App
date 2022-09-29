@@ -19,17 +19,19 @@ const GameCard = ({ game }: Props) => {
           <View style={style.textContainer}>
             <Text style={style.titleText}>{game.title}</Text>
             <Text style={style.text}>Genre: {game.genre}</Text>
-            <Text style={style.text}>Score: {game.score}</Text>
           </View>
-
           <View style={style.icons}>
             <MaterialCommunityIcons name='cards-heart-outline' size={24} color='purple' />
             <MaterialCommunityIcons name='pencil' size={24} color='purple' />
           </View>
         </View>
 
+        <View style={style.score}>
+          <Text style={{ fontSize: 20 }}>🍕🍕🍕🍕🍕</Text>
+        </View>
+
         <View style={style.button}>
-          <Button title='Delete game' />
+          <Button color='red' title='Delete game' />
         </View>
       </View>
     </View>
@@ -87,7 +89,12 @@ const style = StyleSheet.create({
     alignItems: "flex-end",
     position: "absolute",
     bottom: 0,
-    right: 0,
+    right: -15,
+  },
+  score: {
+    bottom: 5,
+    position: "absolute",
+    left: 10,
   },
 });
 

@@ -23,7 +23,7 @@ const GameList = (navigator: Props) => (
           title='Add game'
           to='Add'
           navigator={navigator}
-          style={{ button: styles.AddButton }}
+          style={{ button: styles.AddButton, text: styles.buttonText }}
         />
       </View>
     </View>
@@ -58,5 +58,8 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: "#EBD4C2",
     width: 175,
+  },
+  buttonText: {
+    color: "black",
   },
 });
