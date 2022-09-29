@@ -1,26 +1,15 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Button, Text, View } from "react-native";
+import { View } from "react-native";
+import GetAFav from "../Components/GetAFav";
 import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "PlayThisFav">;
 
-const PlayThisFav = ({ navigation }: Props) => {
+const PlayThisFav = () => {
   return (
     <View>
-      <Text>Play this favorite screen</Text>
-      <Button
-        title='Settings'
-        onPress={() => {
-          navigation.navigate("Settings");
-        }}
-      />
-      <Button
-        title='Home'
-        onPress={() => {
-          navigation.navigate("Home");
-        }}
-      />
+      <GetAFav />
     </View>
   );
 };

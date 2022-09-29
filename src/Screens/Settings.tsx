@@ -48,6 +48,7 @@ const Settings = ({ navigation }: Props) => {
           onChange={() => {
             toggleSound();
             isSoundOn === false ? VibrationSuccess() : null;
+
           }}
         />
       </View>

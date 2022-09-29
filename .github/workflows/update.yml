@@ -1,9 +1,8 @@
 #Workflow for Expo
 name: update
-on: 
+on:
   push:
     branches: main      
-
 jobs:
   update:
     name: EAS Update
