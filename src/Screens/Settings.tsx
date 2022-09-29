@@ -19,87 +19,107 @@ const Settings = ({ navigation }: Props) => {
           navigation.navigate("Home");
         }}
       />
-      
-        <Text>Settings Screen Options</Text>
 
-        <View style={settingsStyle.settingsContainer}>
+      <Text>Settings Screen Options</Text>
+
+      <View style={settingsStyle.settingsContainer}>
         <Text style={settingsStyle.text}>Sound</Text>
-        <Switch style={settingsStyle.switch}  value={isSoundOn} onChange={() => {
-          setisSoundOn((prev) => {prev == false ? VibrationSuccess() : null; return !prev;});
-        }}/>
-        </View>
-
-        <View style={settingsStyle.settingsContainer}>
-        <Text style={settingsStyle.text}>Notifications</Text>
-        <Switch style={settingsStyle.switch} value={isNotificationsOn} onChange={() => {
-          setisNotificationsOn((prev) => {prev == false ? VibrationSuccess() : null; return !prev;})
-          }}/>
-        </View>
-
-        <View style={settingsStyle.settingsContainer}>
-        <Text style={settingsStyle.text}>Vibration</Text>
-        <Switch style={settingsStyle.switch} value={isVibrationOn} onChange={() => {
-          setisVibrationOn((prev) => {prev == false ? VibrationSuccess() : null; return !prev;})
-        }}/>
-        </View>
-
-        <Text>
-          Brightness
-          <Slider
-            style={{ width: 350, height: 40 }}
-            minimumValue={0}
-            maximumValue={1}
-            minimumTrackTintColor='#0FE2FF'
-            maximumTrackTintColor='#3837BA'
-          />
-        </Text>
-        <Button 
-          title='Delete Account'
-          onPress={() => {
-            navigation.navigate("Home");
-            alert("Account deleted");
+        <Switch
+          style={settingsStyle.switch}
+          value={isSoundOn}
+          onChange={() => {
+            setisSoundOn((prev) => {
+              prev == false ? VibrationSuccess() : null;
+              return !prev;
+            });
           }}
         />
       </View>
+
+      <View style={settingsStyle.settingsContainer}>
+        <Text style={settingsStyle.text}>Notifications</Text>
+        <Switch
+          style={settingsStyle.switch}
+          value={isNotificationsOn}
+          onChange={() => {
+            setisNotificationsOn((prev) => {
+              prev == false ? VibrationSuccess() : null;
+              return !prev;
+            });
+          }}
+        />
+      </View>
+
+      <View style={settingsStyle.settingsContainer}>
+        <Text style={settingsStyle.text}>Vibration</Text>
+        <Switch
+          style={settingsStyle.switch}
+          value={isVibrationOn}
+          onChange={() => {
+            setisVibrationOn((prev) => {
+              prev == false ? VibrationSuccess() : null;
+              return !prev;
+            });
+          }}
+        />
+      </View>
+
+      <Text>
+        Brightness
+        <Slider
+          style={{ width: 350, height: 40 }}
+          minimumValue={0}
+          maximumValue={1}
+          minimumTrackTintColor='#0FE2FF'
+          maximumTrackTintColor='#3837BA'
+        />
+      </Text>
+      <Button
+        title='Delete Account'
+        onPress={() => {
+          navigation.navigate("Home");
+          alert("Account deleted");
+        }}
+      />
+    </View>
   );
 };
 
 export default Settings;
 
 const settingsStyle = StyleSheet.create({
-
   switch: {
-    alignSelf: 'flex-end',
+    alignSelf: "flex-end",
     flexGrow: 1,
     flexBasis: 150,
     marginHorizontal: 55,
     paddingVertical: 12,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingLeft: 10,
     borderRadius: 10,
     elevation: 3,
     width: 150,
     height: 50,
-    Color: 'blue',
+    Color: "blue",
   },
   text: {
-    flexDirection: 'column',
+    flexDirection: "column",
     fontSize: 16,
     paddingTop: 5,
     lineHeight: 15,
     marginTop: 5,
     paddingLeft: 10,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     letterSpacing: 0.25,
     color: "black",
   },
   settingsContainer: {
     minHeight: 55,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#F2F2F2',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#F2F2F2",
   },
   deletionButton: {
     marginVertical: 5,

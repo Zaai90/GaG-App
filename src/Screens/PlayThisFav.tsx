@@ -1,16 +1,15 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Button, View } from "react-native";
-import GAGAFav from "../Components/GetAFav";
+import { View } from "react-native";
+import GetAFav from "../Components/GetAFav";
 import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "PlayThisFav">;
 
-const PlayThisFav = (navigator: Props) => {
+const PlayThisFav = () => {
   return (
     <View>
-      <GAGAFav />
-      <Button title={"Go back"} onPress={() => navigator.navigation.goBack()} />
+      <GetAFav />
     </View>
   );
 };

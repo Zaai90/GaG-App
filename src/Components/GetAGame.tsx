@@ -4,7 +4,7 @@ import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
 import GAGCard from "./GAGCard";
 
-const GAG = () => {
+const GetAGame = () => {
   const { games } = useGameContext();
   const { getGameById } = useGameContext();
 
@@ -27,7 +27,7 @@ const GAG = () => {
   );
 };
 
-export default GAG;
+export default GetAGame;
 
 const styles = StyleSheet.create({
   cardContainer: {

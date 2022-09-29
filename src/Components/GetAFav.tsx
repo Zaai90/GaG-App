@@ -4,7 +4,7 @@ import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
 import GAGCard from "./GAGCard";
 
-const GAGAFav = () => {
+const GetAFav = () => {
   const { getFavGames } = useGameContext();
 
   const [rerender, setRerender] = useState<boolean>(true);
@@ -27,7 +27,7 @@ const GAGAFav = () => {
   );
 };
 
-export default GAGAFav;
+export default GetAFav;
 
 const styles = StyleSheet.create({
   cardContainer: {
