@@ -1,6 +1,8 @@
 #Workflow for Expo
 name: update
-on: push
+on: 
+  push:
+    branches: main      
 
 jobs:
   update:
