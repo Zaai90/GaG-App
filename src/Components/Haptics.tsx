@@ -1,8 +1,9 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Pressable, StyleSheet, StyleProp, ViewStyle, TextStyle, Text, Switch} from "react-native";
+import { Pressable, StyleSheet, StyleProp, ViewStyle, TextStyle, Text} from "react-native";
 import { OmitGotoParamList, RootStackParamList } from "../navigation/types";
 import * as Haptics from "expo-haptics";
+import { useSettings } from "../Context/SettingContext";
 
 // Work as GoToButton but with optional haptic feedback parameter
 
@@ -21,8 +22,10 @@ type ButtonStyle = {
   }
 
 const HapticButton = ({ navigator, title, to, hapticType, style }: Props) => {
+    const {isSoundOn} = useSettings();
     return (
         <Pressable style={[basicStyle.button, style?.button]}
+        android_disableSound={!isSoundOn}
         onPress={() => {
             if (hapticType === "Success" || hapticType === "Warning" || hapticType === "Error") {
                 Haptics.notificationAsync(Haptics.NotificationFeedbackType[hapticType]);

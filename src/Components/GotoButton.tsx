@@ -2,7 +2,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from "react-native";
 import { OmitGotoParamList, RootStackParamList } from "../navigation/types";
-
+import { useSettings } from "../Context/SettingContext";
 
 type Props = {
   navigator: NativeStackScreenProps<RootStackParamList, keyof OmitGotoParamList>;
@@ -18,9 +18,12 @@ type ButtonStyle = {
 
 
 const GotoButton = ({ navigator, title, to, style }: Props) => {
+  const {isSoundOn} = useSettings();
   return (
     <Pressable style={[basicStyle.button, style?.button]}
-      onPress={() => {
+    android_disableSound={!isSoundOn}  
+    onPress={() => {
+        
         navigator.navigation.navigate(to);
       }}
     >
