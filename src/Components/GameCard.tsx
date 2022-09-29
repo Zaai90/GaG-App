@@ -19,17 +19,16 @@ const GameCard = ({ game }: Props) => {
           <View style={style.textContainer}>
             <Text style={style.titleText}>{game.title}</Text>
             <Text style={style.text}>Genre: {game.genre}</Text>
-            <Text style={style.text}>Developer: {game.developer}</Text>
-            <Text style={style.text}>{game.score}</Text>
+            <Text style={style.text}>Score: {game.score}</Text>
           </View>
 
-          <View style={{ backgroundColor: "green" }}>
+          <View style={style.icons}>
             <MaterialCommunityIcons name='cards-heart-outline' size={24} color='purple' />
             <MaterialCommunityIcons name='pencil' size={24} color='purple' />
           </View>
         </View>
 
-        <View style={{ justifyContent: "flex-end", flexGrow: 1, backgroundColor: "yellow" }}>
+        <View style={style.button}>
           <Button title='Delete game' />
         </View>
       </View>
@@ -46,13 +45,13 @@ const style = StyleSheet.create({
     minWidth: "95%",
     maxWidth: "95%",
     borderRadius: 10,
-    margin: 5,
     elevation: 6,
     shadowColor: "black",
     shadowOffset: { width: -10, height: 10 },
     shadowOpacity: 0.2,
     shadowRadius: 5,
-    height: 185,
+    height: 150,
+    position: "relative",
   },
   text: {
     fontFamily: "Roboto",
@@ -68,14 +67,27 @@ const style = StyleSheet.create({
     textShadowOpacity: 0.2,
   },
   image: {
-    height: 100,
-    width: 90,
+    height: "100%",
+    width: 100,
   },
   textContainer: {
-    flexGrow: 1,
     paddingLeft: 10,
-    backgroundColor: "red",
-    flexWrap: "wrap",
+    width: 250,
+    flexGrow: 1,
+  },
+  icons: {
+    alignItems: "flex-end",
+    position: "absolute",
+    right: -20,
+    height: 60,
+    justifyContent: "space-between",
+  },
+  button: {
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+    position: "absolute",
+    bottom: 0,
+    right: 0,
   },
 });
 
