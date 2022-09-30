@@ -3,6 +3,7 @@ import { Button, StyleSheet, View } from "react-native";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
 import GAGCard from "./GAGCard";
+import SoundComp from "./SoundComp";
 
 const GetAFav = () => {
   const { getFavGames } = useGameContext();
@@ -12,6 +13,7 @@ const GetAFav = () => {
 
   useEffect(() => {
     if (rerender) {
+      <SoundComp />;
       const FavGames = getFavGames();
       const FavGameNumber = Math.floor(Math.random() * FavGames.length);
       setGame(FavGames[FavGameNumber]);
