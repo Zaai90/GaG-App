@@ -13,7 +13,7 @@ interface IGameContext {
   getFavGames: () => Game[];
   getGameById: (id: string) => Game;
   deleteGame: (id: string) => void;
-  toggleFav: (id: string) => Game;
+  toggleFav: (id: string) => void;
 }
 
 const GameContext = createContext({} as IGameContext);
@@ -44,17 +44,13 @@ function GameContextProvider({ children }: GameProviderProps) {
   }
 
   function toggleFav(id: string) {
-    const game = games.find((i) => i.id === id);
+    const gamesCopy = [...games];
+    const game = gamesCopy.find((i) => i.id === id);
     if (game === undefined) {
-      return {} as Game;
+      return;
     }
-    if (game.isFavourite == false) {
-      game.isFavourite = true;
-      return game;
-    } else {
-      game.isFavourite = false;
-      return game;
-    }
+    game.isFavourite = !game.isFavourite;
+    setGames(gamesCopy);
   }
 
   function getFavGames(): Game[] {

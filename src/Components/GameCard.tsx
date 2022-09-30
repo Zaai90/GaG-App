@@ -1,6 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { Button, Image, StyleSheet, Text, View } from "react-native";
+import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
 
 interface Props {
@@ -8,6 +9,8 @@ interface Props {
 }
 
 const GameCard = ({ game }: Props) => {
+  const { toggleFav } = useGameContext();
+
   return (
     <View style={style.container}>
       <View style={style.image}>
@@ -25,15 +28,20 @@ const GameCard = ({ game }: Props) => {
             <Text style={style.text}>Genre: {game.genre}</Text>
           </View>
           <View style={style.icons}>
-            <MaterialCommunityIcons name='cards-heart-outline' size={24} color='purple' />
+            <MaterialCommunityIcons
+              name={game.isFavourite ? "cards-heart" : "cards-heart-outline"}
+              size={24}
+              color='purple'
+              onPress={() => {
+                toggleFav(game.id);
+              }}
+            />
             <MaterialCommunityIcons name='pencil' size={24} color='purple' />
           </View>
         </View>
-
         <View style={style.score}>
           <Text style={{ fontSize: 15 }}>🍕🍕🍕🍕🍕</Text>
         </View>
-
         <View style={style.button}>
           <Button color='red' title='Delete game' />
         </View>
