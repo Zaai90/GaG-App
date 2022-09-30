@@ -11,7 +11,6 @@ const PlayThis = () => {
   return (
     <View>
       <GetAGame />
-      <TextToSpeech />
     </View>
   );
 };
