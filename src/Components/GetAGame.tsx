@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { Button, StyleSheet, View } from "react-native";
 import TextToSpeech from "../Components/Speech";
 import { useGameContext } from "../Context/GameContext";
@@ -15,7 +15,7 @@ const GetAGame = () => {
   useEffect(() => {
     if (rerender) {
       const gameId: string = Math.floor(Math.random() * games.length + 1).toLocaleString();
-      setGame(getGameById(gameId)); //till Daniel
+      setGame(getGameById(gameId));
       setRerender(false);
     }
   }, [rerender, game]);
