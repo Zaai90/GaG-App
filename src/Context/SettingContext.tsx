@@ -12,6 +12,7 @@ interface SettingContextValues {
     isNotificationsOn: boolean;
     setIsNotificationsOn: React.Dispatch<React.SetStateAction<boolean>>
     toggleSound: () => void;
+    toggleVibration: () => void;
 
 }
 
@@ -21,8 +22,13 @@ function SettingsProvider({ children }: SettingProviderProps) {
     const [isSoundOn, setIsSoundOn] = useState<boolean>(true);
     const [isVibrationOn, setIsVibrationOn] = useState<boolean>(true);
     const [isNotificationsOn, setIsNotificationsOn] = useState<boolean>(true);
+    
     function toggleSound() {
         setIsSoundOn((prev) => !prev);
+    }
+
+    function toggleVibration() {
+        setIsVibrationOn((prev) => !prev);
     }
 
     return (
@@ -35,6 +41,8 @@ function SettingsProvider({ children }: SettingProviderProps) {
                 setIsVibrationOn,
                 setIsNotificationsOn,
                 toggleSound,
+                toggleVibration,
+                //ADD toggleNotifications,
             }}
         >
             {children}
