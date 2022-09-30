@@ -16,7 +16,7 @@ export const mockData: Game[] = [
     genre: "RTS",
     score: 5,
     developer: "Infinity Plus Two",
-    isFavourite: true,
+    isFavourite: false,
     imgUrl:
       "https://fanatical.imgix.net/product/original/dbb9ec4a-ad07-4d69-b757-bb126024c2f7.jpg?auto=compress,format&w=450&fit=crop&h=253",
   },
@@ -46,7 +46,7 @@ export const mockData: Game[] = [
     genre: "FPS",
     score: 5,
     developer: "Crytek",
-    isFavourite: true,
+    isFavourite: false,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/a/a5/Hunt_Showdown_cover_art.png",
   },
   {
@@ -55,7 +55,7 @@ export const mockData: Game[] = [
     genre: "Turn based strategy",
     score: 4,
     developer: "New World Computing",
-    isFavourite: true,
+    isFavourite: false,
     imgUrl:
       "https://images.gog-statics.com/a18a7017bdca7bdd14fb003a46522e320051d3e9c1fb939559a4517d90f86170_product_card_v2_mobile_slider_639.jpg",
   },
