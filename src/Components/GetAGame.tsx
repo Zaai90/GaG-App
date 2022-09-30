@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Button, StyleSheet, View } from "react-native";
 import TextToSpeech from "../Components/Speech";
 import { useGameContext } from "../Context/GameContext";
@@ -14,9 +14,8 @@ const GetAGame = () => {
 
   useEffect(() => {
     if (rerender) {
-      const gameId = Math.floor(Math.random() * games.length + 1).toLocaleString();
-      setGame(getGameById(gameId));
-      TextToSpeech(gameId);
+      const gameId: string = Math.floor(Math.random() * games.length + 1).toLocaleString();
+      setGame(getGameById(gameId)); //till Daniel
       setRerender(false);
     }
   }, [rerender, game]);
@@ -24,6 +23,7 @@ const GetAGame = () => {
   return (
     <View key={game?.id} style={styles.cardContainer}>
       {game ? <GAGCard game={game} /> : null}
+      {game ? <TextToSpeech gameId={game.id} /> : null}
       <Button title='GaG Again😒' onPress={() => setRerender(true)} />
     </View>
   );
