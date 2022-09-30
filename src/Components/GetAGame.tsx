@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, StyleSheet, View } from "react-native";
+import TextToSpeech from "../Components/Speech";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
 import GAGCard from "./GAGCard";
@@ -15,6 +16,7 @@ const GetAGame = () => {
     if (rerender) {
       const gameId = Math.floor(Math.random() * games.length + 1).toLocaleString();
       setGame(getGameById(gameId));
+      TextToSpeech(gameId);
       setRerender(false);
     }
   }, [rerender, game]);
