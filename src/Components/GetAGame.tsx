@@ -16,6 +16,7 @@ const GetAGame = () => {
 
   useEffect(() => {
     if (rerender) {
+      playSound();
       const gameId = Math.floor(Math.random() * games.length + 1).toLocaleString();
       setGame(getGameById(gameId));
       setRerender(false);
