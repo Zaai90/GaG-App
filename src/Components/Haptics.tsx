@@ -21,17 +21,19 @@ type ButtonStyle = {
 };
 
 const HapticButton = ({ navigator, title, to, hapticType, style }: Props) => {
-    const {isSoundOn} = useSettings();
+    const {isSoundOn, isVibrationOn} = useSettings();
     return (
         <Pressable style={[basicStyle.button, style?.button]}
         android_disableSound={!isSoundOn}
         onPress={() => {
+          if(isVibrationOn === true) {
             if (hapticType === "Success" || hapticType === "Warning" || hapticType === "Error") {
                 Haptics.notificationAsync(Haptics.NotificationFeedbackType[hapticType]);
             }
             if(hapticType === "Light" || hapticType === "Medium" || hapticType === "Heavy") {
                 Haptics.impactAsync(Haptics.ImpactFeedbackStyle[hapticType]);
             }
+          }
             navigator.navigation.navigate(to);
             }}
             >
@@ -39,14 +41,7 @@ const HapticButton = ({ navigator, title, to, hapticType, style }: Props) => {
                 </Pressable>
             );
         }
-        navigator.navigation.navigate(to);
-      }}
-    >
-      <Text style={[basicStyle.text, style?.text]}>{title}</Text>
-    </Pressable>
-  );
-};
-
+        
 export async function VibrationSuccess() {
   await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 }

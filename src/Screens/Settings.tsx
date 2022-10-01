@@ -27,19 +27,13 @@ const Settings = ({ navigation }: Props) => {
     isVibrationOn,
     setIsVibrationOn,
     toggleSound,
+    toggleVibration
   } = useSettings();
 
   return (
     <View>
-      <Button
-        title='Home'
-        onPress={() => {
-          navigation.navigate("Home");
-        }}
-      />
-
       <Text>Settings Screen Options</Text>
-
+      {/* SOUND SWITCH */}
       <View style={settingsStyle.settingsContainer}>
         <Text style={settingsStyle.text}>Sound</Text>
         <Switch
@@ -48,35 +42,35 @@ const Settings = ({ navigation }: Props) => {
           onChange={() => {
             toggleSound();
             isSoundOn === false ? VibrationSuccess() : null;
-
           }}
         />
       </View>
-
+      {/* NOTIFICATION SWITCH */}
       <View style={settingsStyle.settingsContainer}>
         <Text style={settingsStyle.text}>Notifications</Text>
         <Switch
           style={settingsStyle.switch}
           value={isNotificationsOn}
           onChange={() => {
+            //RMOVME FROM HERE => 
             setIsNotificationsOn((prev) => {
               prev === false ? VibrationSuccess() : null;
               return !prev;
-            });
+            }); //TO HERE <=
+            //ADD => toggleNotifications();
+            //ADD => isNotificationsOn === false ? VibrationSuccess() : null;
           }}
         />
       </View>
-
+          {/* VIBRATION SWITCH */}
       <View style={settingsStyle.settingsContainer}>
         <Text style={settingsStyle.text}>Vibration</Text>
         <Switch
           style={settingsStyle.switch}
           value={isVibrationOn}
           onChange={() => {
-            setIsVibrationOn((prev) => {
-              prev === false ? VibrationSuccess() : null;
-              return !prev;
-            });
+            toggleVibration();
+            isSoundOn === false ? VibrationSuccess() : null;
           }}
         />
       </View>
