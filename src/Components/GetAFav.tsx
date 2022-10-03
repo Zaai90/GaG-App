@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Button, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
 import GAGCard from "./GAGCard";
-import SoundComp from "./SoundComp";
+import SoundButton from "./SoundButton";
 
 const GetAFav = () => {
   const { getFavGames } = useGameContext();
@@ -13,7 +13,6 @@ const GetAFav = () => {
 
   useEffect(() => {
     if (rerender) {
-      <SoundComp />;
       const FavGames = getFavGames();
       const FavGameNumber = Math.floor(Math.random() * FavGames.length);
       setGame(FavGames[FavGameNumber]);
@@ -24,7 +23,7 @@ const GetAFav = () => {
   return (
     <View key={game?.id} style={styles.cardContainer}>
       {game ? <GAGCard game={game} /> : null}
-      <Button title='GaG another Fav' onPress={() => setRerender(true)} />
+      <SoundButton title='GaG another Fav' onPress={() => setRerender(true)} />
     </View>
   );
 };
