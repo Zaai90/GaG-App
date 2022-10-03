@@ -1,10 +1,8 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from "react-native";
+import { StyleProp, TextStyle, ViewStyle } from "react-native";
 import { OmitGotoParamList, RootStackParamList } from "../navigation/types";
-import { useSettings } from "../Context/SettingContext";
-
-
+import BasicButton from "./BasicButton";
 
 type Props = {
   navigator: NativeStackScreenProps<RootStackParamList, keyof OmitGotoParamList>;
@@ -19,38 +17,9 @@ type ButtonStyle = {
 };
 
 const GotoButton = ({ navigator, title, to, style }: Props) => {
-  const {isSoundOn} = useSettings();
   return (
-
-    <Pressable style={[basicStyle.button, style?.button]}
-    android_disableSound={!isSoundOn}  
-    onPress={() => {
-        navigator.navigation.navigate(to);
-      }}
-    >
-      <Text style={[basicStyle.text, style?.text]}>{title}</Text>
-    </Pressable>
-  );
+    <BasicButton title={title} style={style} onPress={() => navigator.navigation.navigate(to)} />
+  )
 };
 
 export default GotoButton;
-
-const basicStyle = StyleSheet.create({
-  button: {
-    marginVertical: 5,
-    paddingVertical: 12,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-    backgroundColor: "#876796",
-  },
-  text: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: "bold",
-    letterSpacing: 0.25,
-    color: "white",
-  },
-});

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import React, {  useEffect, useState } from "react";
+import { Button, StyleSheet, View } from "react-native";
+import TextToSpeech from "../Components/Speech";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
 import GAGCard from "./GAGCard";
@@ -14,7 +15,7 @@ const GetAGame = () => {
 
   useEffect(() => {
     if (rerender) {
-      const gameId = Math.floor(Math.random() * games.length + 1).toLocaleString();
+      const gameId: string = Math.floor(Math.random() * games.length + 1).toLocaleString();
       setGame(getGameById(gameId));
       setRerender(false);
     }
@@ -23,7 +24,8 @@ const GetAGame = () => {
   return (
     <View key={game?.id} style={styles.cardContainer}>
       {game ? <GAGCard game={game} /> : null}
-      <SoundButton title='GaG Again😒' onPress={() => setRerender(true)} />
+      {game ? <TextToSpeech gameId={game.id} /> : null}
+    <SoundButton title='GaG Again😒' onPress={() => setRerender(true)} />
     </View>
   );
 };
