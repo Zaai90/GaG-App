@@ -4,6 +4,7 @@ import TextToSpeech from "../Components/Speech";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
 import GAGCard from "./GAGCard";
+import SoundButton from "./SoundButton";
 
 const GetAGame = () => {
   const { games } = useGameContext();
@@ -24,7 +25,7 @@ const GetAGame = () => {
     <View key={game?.id} style={styles.cardContainer}>
       {game ? <GAGCard game={game} /> : null}
       {game ? <TextToSpeech gameId={game.id} /> : null}
-      <Button title='GaG Again😒' onPress={() => setRerender(true)} />
+    <SoundButton title='GaG Again😒' onPress={() => setRerender(true)} />
     </View>
   );
 };
