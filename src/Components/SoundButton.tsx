@@ -1,12 +1,19 @@
 import { Audio } from "expo-av";
 import React from "react";
+import { Pressable, Text } from "react-native";
 import DeathSoundEffect from "../../assets/DeathSoundEffect.wav";
 
-export default function SoundComp() {
+interface Props {
+  onPress: () => void;
+  title: string;
+}
+
+const SoundComp = ({ title, onPress }: Props) => {
   const [sound, setSound] = React.useState<Audio.Sound | null>(null);
+
   async function playSound() {
-    console.log("Loading Sound");
     const { sound } = await Audio.Sound.createAsync(DeathSoundEffect);
+    console.log("Loading Sound");
     setSound(sound);
 
     console.log("Playing Sound");
@@ -16,11 +23,18 @@ export default function SoundComp() {
   React.useEffect(() => {
     return sound
       ? () => {
-          console.log("Unloading Sound");
-          sound.unloadAsync();
-        }
+        console.log("Unloading Sound");
+        sound.unloadAsync();
+      }
       : undefined;
   }, [sound]);
 
-  return playSound;
-}
+  return <Pressable onPress={() => {
+    playSound();
+    onPress();
+    sound?.stopAsync();
+
+  }}><Text>{title}</Text></Pressable >
+};
+
+export default SoundComp;
