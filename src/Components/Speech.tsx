@@ -8,8 +8,8 @@ interface Props {
   gameId: string;
 }
 
-function TextToSpeech({gameId}: Props) {
-  const { getGameById} = useGameContext();
+function TextToSpeech({ gameId }: Props) {
+  const { getGameById } = useGameContext();
   const game: Game = getGameById(gameId);
 
   const speak = () => {
@@ -17,9 +17,19 @@ function TextToSpeech({gameId}: Props) {
     const titleToSay = game.title;
     const developerToSay = game.developer;
     const scoreToSay = game.score;
-    const gameToSay = "You should play " + titleToSay +" genre is "+ genreToSay + " Developed by" 
-    + developerToSay + " the game is rated " + scoreToSay + " out of 5";
-    Speech.speak(gameToSay);
+    const gameToSay =
+      "You should play " +
+      titleToSay +
+      ". The genre is " +
+      genreToSay +
+      ". Developed by " +
+      developerToSay +
+      ". You have rated the game " +
+      scoreToSay +
+      " out of 5";
+    Speech.speak(gameToSay, {
+      language: "en-EN",
+    });
   };
 
   return (
