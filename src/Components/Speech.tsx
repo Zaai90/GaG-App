@@ -20,7 +20,7 @@ function TextToSpeech({ gameId }: Props) {
     const gameToSay =
       "You should play " +
       titleToSay +
-      ". genre is " +
+      ". The genre is " +
       genreToSay +
       ". Developed by " +
       developerToSay +
