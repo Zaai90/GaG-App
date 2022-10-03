@@ -23,7 +23,7 @@ const GetAFav = () => {
   return (
     <View key={game?.id} style={styles.cardContainer}>
       {game ? <GAGCard game={game} /> : null}
-      <SoundButton title='GaG another Fav' onPress={() => setRerender(true)} />
+      <SoundButton title='GaG another Fav 😍' onPress={() => setRerender(true)} />
     </View>
   );
 };
