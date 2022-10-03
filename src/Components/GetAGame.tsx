@@ -1,5 +1,5 @@
-import React, {  useEffect, useState } from "react";
-import { Button, StyleSheet, View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, View } from "react-native";
 import TextToSpeech from "../Components/Speech";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
@@ -24,8 +24,10 @@ const GetAGame = () => {
   return (
     <View key={game?.id} style={styles.cardContainer}>
       {game ? <GAGCard game={game} /> : null}
-      {game ? <TextToSpeech gameId={game.id} /> : null}
-    <SoundButton title='GaG Again😒' onPress={() => setRerender(true)} />
+      <View style={{ alignItems: "center" }}>
+        {game ? <TextToSpeech gameId={game.id} /> : null}
+        <SoundButton title='GaG Again😒' onPress={() => setRerender(true)} />
+      </View>
     </View>
   );
 };
