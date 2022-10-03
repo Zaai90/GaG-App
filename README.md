@@ -51,7 +51,7 @@ GAG runs on `localhost:19000` by default.
 
   - [Reanimated](https://docs.expo.dev/versions/latest/sdk/reanimated/)
 
-  - [Speach](https://docs.expo.dev/versions/latest/sdk/speech/)
+  - [Speech](https://docs.expo.dev/versions/latest/sdk/speech/)
 
   - [Brightness](https://docs.expo.dev/versions/latest/sdk/brightness/)
 
