@@ -1,22 +1,12 @@
-import Slider from "@react-native-community/slider";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Button, Switch, Text, View, StyleSheet } from "react-native";
-import { RootStackParamList } from "../navigation/types";
+import { Button, StyleSheet, Switch, Text, View } from "react-native";
 import { VibrationSuccess } from "../Components/Haptics";
+import SlidingStartExample from "../Components/Slider";
 import { useSettings } from "../Context/SettingContext";
+import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Settings">;
-
-declare global {
-  namespace SettingsState {
-    export interface State {
-      Sound: boolean;
-      Vibration: boolean;
-      Notifications: boolean;
-    }
-  }
-}
 
 const Settings = ({ navigation }: Props) => {
   const {
@@ -27,7 +17,7 @@ const Settings = ({ navigation }: Props) => {
     isVibrationOn,
     setIsVibrationOn,
     toggleSound,
-    toggleVibration
+    toggleVibration,
   } = useSettings();
 
   return (
@@ -52,7 +42,7 @@ const Settings = ({ navigation }: Props) => {
           style={settingsStyle.switch}
           value={isNotificationsOn}
           onChange={() => {
-            //RMOVME FROM HERE => 
+            //REMOVE FROM HERE =>
             setIsNotificationsOn((prev) => {
               prev === false ? VibrationSuccess() : null;
               return !prev;
@@ -62,7 +52,7 @@ const Settings = ({ navigation }: Props) => {
           }}
         />
       </View>
-          {/* VIBRATION SWITCH */}
+      {/* VIBRATION SWITCH */}
       <View style={settingsStyle.settingsContainer}>
         <Text style={settingsStyle.text}>Vibration</Text>
         <Switch
@@ -70,21 +60,16 @@ const Settings = ({ navigation }: Props) => {
           value={isVibrationOn}
           onChange={() => {
             toggleVibration();
-            isSoundOn === false ? VibrationSuccess() : null;
+            isVibrationOn === false ? VibrationSuccess() : null;
           }}
         />
       </View>
 
-      <Text>
-        Brightness
-        <Slider
-          style={{ width: 350, height: 40 }}
-          minimumValue={0}
-          maximumValue={1}
-          minimumTrackTintColor='#0FE2FF'
-          maximumTrackTintColor='#3837BA'
-        />
-      </Text>
+      <View style={settingsStyle.settingsContainer}>
+        <Text style={settingsStyle.text}>Brightness</Text>
+        <SlidingStartExample />
+      </View>
+
       <Button
         title='Delete Account'
         onPress={() => {
