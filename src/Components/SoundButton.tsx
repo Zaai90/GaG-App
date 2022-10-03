@@ -8,7 +8,7 @@ interface Props {
   title: string;
 }
 
-const SoundComp = ({ title, onPress }: Props) => {
+const SoundButton = ({ title, onPress }: Props) => {
   const [sound, setSound] = React.useState<Audio.Sound | null>(null);
 
   async function playSound() {
@@ -37,4 +37,4 @@ const SoundComp = ({ title, onPress }: Props) => {
   }}><Text>{title}</Text></Pressable >
 };
 
-export default SoundComp;
+export default SoundButton;
