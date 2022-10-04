@@ -37,5 +37,6 @@ export default GetAGame;
 const styles = StyleSheet.create({
   cardContainer: {
     marginBottom: 5,
+    backgroundColor: "white",
   },
 });
