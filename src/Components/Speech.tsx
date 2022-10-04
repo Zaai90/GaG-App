@@ -1,6 +1,7 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Speech from "expo-speech";
 import React from "react";
-import { Button, View } from "react-native";
+import { View } from "react-native";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
 
@@ -34,7 +35,7 @@ function TextToSpeech({ gameId }: Props) {
 
   return (
     <View>
-      <Button title='Text to speech' onPress={speak} />
+      <MaterialCommunityIcons name='text-to-speech' size={30} color='black' onPress={speak} />
     </View>
   );
 }
