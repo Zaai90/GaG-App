@@ -1,7 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { Button, StyleSheet, Switch, Text, View } from "react-native";
-import { VibrationSuccess } from "../Components/Haptics";
+import { VibrationSuccess } from "../Components/Buttons/Haptics";
 import SlidingStartExample from "../Components/Slider";
 import { useSettings } from "../Context/SettingContext";
 import { RootStackParamList } from "../navigation/types";

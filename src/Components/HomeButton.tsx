@@ -3,13 +3,13 @@ import React from "react";
 import { Pressable, Text } from "react-native";
 
 const HomeButton = () => {
-const navigation = useNavigation();
-    return (
-        <Pressable onPress={() => navigation.navigate("Home")}>
-            <Text>Home</Text>
-        </Pressable>
-    )
-}
+  const navigation = useNavigation();
+  return (
+    <Pressable onPress={() => navigation.navigate("Home")}>
+      <Text>Home</Text>
+    </Pressable>
+  );
+};
 export default HomeButton;
 
 //Ta bort vid rensing av projekt

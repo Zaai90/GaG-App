@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
+import SoundButton from "./Buttons/SoundButton";
 import GAGCard from "./GAGCard";
-import SoundButton from "./SoundButton";
 import TextToSpeech from "./Speech";
 
 const GetAFav = () => {

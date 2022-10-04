@@ -3,8 +3,8 @@ import { StyleSheet, View } from "react-native";
 import TextToSpeech from "../Components/Speech";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
+import SoundButton from "./Buttons/SoundButton";
 import GAGCard from "./GAGCard";
-import SoundButton from "./SoundButton";
 
 const GetAGame = () => {
   const { games } = useGameContext();
