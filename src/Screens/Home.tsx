@@ -3,6 +3,7 @@ import React from "react";
 import { View } from "react-native";
 import GotoButton from "../Components/Buttons/GotoButton";
 import HapticButton from "../Components/Buttons/Haptics";
+import BackgroundHomeVideo from "../Components/Videobackground";
 import { useGameContext } from "../Context/GameContext";
 import { RootStackParamList } from "../navigation/types";
 
@@ -13,6 +14,7 @@ const Home = (navigator: Props) => {
   const FavGames = getFavGames();
   return (
     <View>
+      <BackgroundHomeVideo navigator={navigator} />
       <HapticButton title='GaG me!😘' to='PlayThis' navigator={navigator} hapticType='Heavy' />
       {FavGames.length > 0 ? (
         <HapticButton
