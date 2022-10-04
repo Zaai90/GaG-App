@@ -1,9 +1,9 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import React from "react";
-import { Pressable, StyleSheet, StyleProp, ViewStyle, TextStyle, Text} from "react-native";
-import { OmitGotoParamList, RootStackParamList } from "../navigation/types";
 import * as Haptics from "expo-haptics";
+import React from "react";
+import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from "react-native";
 import { useSettings } from "../Context/SettingContext";
+import { OmitGotoParamList, RootStackParamList } from "../navigation/types";
 
 // Work as GoToButton but with optional haptic feedback parameter
 
@@ -21,27 +21,28 @@ type ButtonStyle = {
 };
 
 const HapticButton = ({ navigator, title, to, hapticType, style }: Props) => {
-    const {isSoundOn, isVibrationOn} = useSettings();
-    return (
-        <Pressable style={[basicStyle.button, style?.button]}
-        android_disableSound={!isSoundOn}
-        onPress={() => {
-          if(isVibrationOn === true) {
-            if (hapticType === "Success" || hapticType === "Warning" || hapticType === "Error") {
-                Haptics.notificationAsync(Haptics.NotificationFeedbackType[hapticType]);
-            }
-            if(hapticType === "Light" || hapticType === "Medium" || hapticType === "Heavy") {
-                Haptics.impactAsync(Haptics.ImpactFeedbackStyle[hapticType]);
-            }
+  const { isSoundOn, isVibrationOn } = useSettings();
+  return (
+    <Pressable
+      style={[basicStyle.button, style?.button]}
+      android_disableSound={!isSoundOn}
+      onPress={() => {
+        if (isVibrationOn === true) {
+          if (hapticType === "Success" || hapticType === "Warning" || hapticType === "Error") {
+            Haptics.notificationAsync(Haptics.NotificationFeedbackType[hapticType]);
           }
-            navigator.navigation.navigate(to);
-            }}
-            >
-                <Text style={[basicStyle.text, style?.text]}>{title}</Text>
-                </Pressable>
-            );
+          if (hapticType === "Light" || hapticType === "Medium" || hapticType === "Heavy") {
+            Haptics.impactAsync(Haptics.ImpactFeedbackStyle[hapticType]);
+          }
         }
-        
+        navigator.navigation.navigate(to);
+      }}
+    >
+      <Text style={[basicStyle.text, style?.text]}>{title}</Text>
+    </Pressable>
+  );
+};
+
 export async function VibrationSuccess() {
   await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 }
@@ -51,6 +52,7 @@ export default HapticButton;
 const basicStyle = StyleSheet.create({
   button: {
     marginVertical: 5,
+    marginHorizontal: 70,
     paddingVertical: 12,
     justifyContent: "center",
     alignItems: "center",
