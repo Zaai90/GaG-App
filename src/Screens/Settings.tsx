@@ -11,13 +11,11 @@ type Props = NativeStackScreenProps<RootStackParamList, "Settings">;
 const Settings = ({ navigation }: Props) => {
   const {
     isSoundOn,
-    setIsSoundOn,
     isNotificationsOn,
-    setIsNotificationsOn,
     isVibrationOn,
-    setIsVibrationOn,
     toggleSound,
     toggleVibration,
+    toggleNotifications,
   } = useSettings();
 
   return (
@@ -42,13 +40,8 @@ const Settings = ({ navigation }: Props) => {
           style={settingsStyle.switch}
           value={isNotificationsOn}
           onChange={() => {
-            //REMOVE FROM HERE =>
-            setIsNotificationsOn((prev) => {
-              prev === false ? VibrationSuccess() : null;
-              return !prev;
-            }); //TO HERE <=
-            //ADD => toggleNotifications();
-            //ADD => isNotificationsOn === false ? VibrationSuccess() : null;
+            toggleNotifications();
+            isNotificationsOn === false ? VibrationSuccess() : null;
           }}
         />
       </View>
