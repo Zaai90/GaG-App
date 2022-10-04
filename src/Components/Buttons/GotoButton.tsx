@@ -1,7 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from "react-native";
-import { OmitGotoParamList, RootStackParamList } from "../navigation/types";
+import { OmitGotoParamList, RootStackParamList } from "../../navigation/types";
 
 type Props = {
   navigator: NativeStackScreenProps<RootStackParamList, keyof OmitGotoParamList>;
@@ -33,6 +33,7 @@ export default GotoButton;
 const basicStyle = StyleSheet.create({
   button: {
     marginVertical: 5,
+    marginHorizontal: 70,
     paddingVertical: 12,
     justifyContent: "center",
     alignItems: "center",

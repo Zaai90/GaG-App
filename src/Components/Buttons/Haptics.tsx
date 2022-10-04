@@ -2,8 +2,8 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import * as Haptics from "expo-haptics";
 import React from "react";
 import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from "react-native";
-import { useSettings } from "../Context/SettingContext";
-import { OmitGotoParamList, RootStackParamList } from "../navigation/types";
+import { useSettings } from "../../Context/SettingContext";
+import { OmitGotoParamList, RootStackParamList } from "../../navigation/types";
 
 // Work as GoToButton but with optional haptic feedback parameter
 

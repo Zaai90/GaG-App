@@ -1,7 +1,7 @@
 import { Audio } from "expo-av";
 import React from "react";
 import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from "react-native";
-import DeathSoundEffect from "../../assets/DeathSoundEffect.wav";
+import DeathSoundEffect from "../../../assets/DeathSoundEffect.wav";
 
 interface Props {
   onPress: () => void;

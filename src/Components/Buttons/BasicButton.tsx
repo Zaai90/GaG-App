@@ -8,7 +8,7 @@ import {
   TextStyle,
   ViewStyle,
 } from "react-native";
-import { useSettings } from "../Context/SettingContext";
+import { useSettings } from "../../Context/SettingContext";
 
 type Props = {
   onPress: (event: GestureResponderEvent) => void;
