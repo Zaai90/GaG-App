@@ -24,7 +24,6 @@ const Home = (navigator: Props) => {
           hapticType='Heavy'
         />
       ) : null}
-
       <GotoButton title='List of your games' to='GameList' navigator={navigator} />
     </View>
   );

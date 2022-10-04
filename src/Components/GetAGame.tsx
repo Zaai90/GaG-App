@@ -3,6 +3,7 @@ import { StyleSheet, View } from "react-native";
 import TextToSpeech from "../Components/Speech";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
+import { FadeInView } from "./AnimView";
 import SoundButton from "./Buttons/SoundButton";
 import GAGCard from "./GAGCard";
 
@@ -22,13 +23,13 @@ const GetAGame = () => {
   }, [rerender, game]);
 
   return (
-    <View key={game?.id} style={styles.cardContainer}>
+    <FadeInView key={game?.id} style={styles.cardContainer}>
       {game ? <GAGCard game={game} /> : null}
       <View style={{ alignItems: "center" }}>
         {game ? <TextToSpeech gameId={game.id} /> : null}
         <SoundButton title='GaG Again😒' onPress={() => setRerender(true)} />
       </View>
-    </View>
+    </FadeInView>
   );
 };
 
@@ -36,6 +37,7 @@ export default GetAGame;
 
 const styles = StyleSheet.create({
   cardContainer: {
+    marginTop: 5,
     marginBottom: 5,
     backgroundColor: "white",
   },
