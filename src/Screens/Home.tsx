@@ -1,6 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
+import { FadeInView } from "../Components/AnimView";
 import GotoButton from "../Components/Buttons/GotoButton";
 import HapticButton from "../Components/Buttons/Haptics";
 import { useGameContext } from "../Context/GameContext";
@@ -24,6 +25,9 @@ const Home = (navigator: Props) => {
       ) : null}
 
       <GotoButton title='List of your games' to='GameList' navigator={navigator} />
+      <FadeInView style={{ width: 250, height: 50, backgroundColor: "powderblue" }}>
+        <Text>Hello</Text>
+      </FadeInView>
     </View>
   );
 };
