@@ -1,31 +1,32 @@
-import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
-import { View, StyleSheet, Pressable } from "react-native";
+import { StyleSheet, View } from "react-native";
+import HomeButton from "../Components/Header/HomeButton";
+import SettingsButton from "../Components/Header/SettingsButton";
+import TitlePlacer from "../Components/Header/TitlePlacer";
 import Add from "../Screens/Add";
 import Edit from "../Screens/Edit";
-import FavGameList from "../Screens/FavGameList";
 import GameList from "../Screens/GameList";
 import Home from "../Screens/Home";
 import PlayThis from "../Screens/PlayThis";
 import PlayThisFav from "../Screens/PlayThisFav";
 import Settings from "../Screens/Settings";
 import { RootStackParamList } from "./types";
-import HomeButton from "../Components/Header/HomeButton";
-import SettingsButton from "../Components/Header/SettingsButton";
-import TitlePlacer from "../Components/Header/TitlePlacer";
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const HomeStackNavigator = () => {
   return (
-    <RootStack.Navigator  screenOptions={{ 
-      headerBackground: () => <View style={{ backgroundColor: '#876796', flex: 1, paddingLeft: 8 }} >
-      </View>,
-      headerRight: () => <HomeButton />,
-      headerLeft: () => <SettingsButton />,
-      headerTitle: () => <TitlePlacer />,      
-    }}>
+    <RootStack.Navigator
+      screenOptions={{
+        headerBackground: () => (
+          <View style={{ backgroundColor: "#876796", flex: 1, paddingLeft: 8 }}></View>
+        ),
+        headerRight: () => <HomeButton />,
+        headerLeft: () => <SettingsButton />,
+        headerTitle: () => <TitlePlacer />,
+      }}
+    >
       <RootStack.Screen name='Home' component={Home} />
       <RootStack.Screen name='Settings' component={Settings} />
       <RootStack.Screen
@@ -47,13 +48,6 @@ const HomeStackNavigator = () => {
         component={GameList}
         options={{
           title: "List of all your games",
-        }}
-      />
-      <RootStack.Screen
-        name='FavGameList'
-        component={FavGameList}
-        options={{
-          title: "Display all Fav games",
         }}
       />
       <RootStack.Screen

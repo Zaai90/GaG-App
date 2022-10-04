@@ -1,8 +1,8 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { View } from "react-native";
-import GotoButton from "../Components/GotoButton";
-import HapticButton from "../Components/Haptics";
+import GotoButton from "../Components/Buttons/GotoButton";
+import HapticButton from "../Components/Buttons/Haptics";
 import BackgroundHomeVideo from "../Components/Videobackground";
 import { useGameContext } from "../Context/GameContext";
 import { RootStackParamList } from "../navigation/types";
@@ -26,7 +26,6 @@ const Home = (navigator: Props) => {
       ) : null}
 
       <GotoButton title='List of your games' to='GameList' navigator={navigator} />
-      <GotoButton title='List of your favorite games' to='FavGameList' navigator={navigator} />
     </View>
   );
 };

@@ -6,7 +6,6 @@ export type RootStackParamList = {
   Edit: { id: string };
   PlayThisFav: undefined;
   GameList: undefined;
-  FavGameList: undefined;
 };
 
 export type OmitGotoParamList = Omit<RootStackParamList, "Edit" | "Settings">;

@@ -33,7 +33,7 @@ function BackgroundHomeVideo({ navigator }: Props) {
   }, [navigator]);
 
   return (
-    <View style={{ height: "79%", width: "100%" }}>
+    <View style={{ height: "85%", width: "100%" }}>
       <Video
         ref={video}
         source={require("../../assets/Wrath.mp4")}

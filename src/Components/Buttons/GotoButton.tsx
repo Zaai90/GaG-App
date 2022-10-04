@@ -1,16 +1,12 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Pressable, StyleSheet, StyleProp, ViewStyle, TextStyle, Text, Switch } from "react-native";
-import { OmitGotoParamList, RootStackParamList } from "../navigation/types";
-import * as Haptics from "expo-haptics";
-
-// Work as GoToButton but with optional haptic feedback parameter
+import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from "react-native";
+import { OmitGotoParamList, RootStackParamList } from "../../navigation/types";
 
 type Props = {
   navigator: NativeStackScreenProps<RootStackParamList, keyof OmitGotoParamList>;
   to: keyof OmitGotoParamList;
   title: string;
-  hapticType?: "Light" | "Medium" | "Heavy" | "Success" | "Warning" | "Error";
   style?: ButtonStyle;
 };
 
@@ -19,17 +15,11 @@ type ButtonStyle = {
   text?: StyleProp<TextStyle>;
 };
 
-const HapticButton = ({ navigator, title, to, hapticType, style }: Props) => {
+const GotoButton = ({ navigator, title, to, style }: Props) => {
   return (
     <Pressable
       style={[basicStyle.button, style?.button]}
       onPress={() => {
-        if (hapticType === "Success" || hapticType === "Warning" || hapticType === "Error") {
-          Haptics.notificationAsync(Haptics.NotificationFeedbackType[hapticType]);
-        }
-        if (hapticType === "Light" || hapticType === "Medium" || hapticType === "Heavy") {
-          Haptics.impactAsync(Haptics.ImpactFeedbackStyle[hapticType]);
-        }
         navigator.navigation.navigate(to);
       }}
     >
@@ -38,15 +28,12 @@ const HapticButton = ({ navigator, title, to, hapticType, style }: Props) => {
   );
 };
 
-export async function VibrationSuccess() {
-  await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-}
-
-export default HapticButton;
+export default GotoButton;
 
 const basicStyle = StyleSheet.create({
   button: {
     marginVertical: 5,
+    marginHorizontal: 70,
     paddingVertical: 12,
     justifyContent: "center",
     alignItems: "center",
