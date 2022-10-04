@@ -24,7 +24,6 @@ const Home = (navigator: Props) => {
       ) : null}
 
       <GotoButton title='List of your games' to='GameList' navigator={navigator} />
-      <GotoButton title='List of your favorite games' to='FavGameList' navigator={navigator} />
     </View>
   );
 };
