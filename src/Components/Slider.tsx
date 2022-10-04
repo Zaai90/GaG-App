@@ -30,8 +30,7 @@ const BrightnessSlider = (props: SliderProps) => {
       (async () => {
         console.log("Getting Systems brightness");
         await getBrightnessFromSystemAsync();
-      }
-      )();
+      })();
     }
   }, [granted]);
 
@@ -39,12 +38,10 @@ const BrightnessSlider = (props: SliderProps) => {
     (async () => {
       console.log("Brightness set to " + brightness);
       if (granted) {
-        await Brightness.setSystemBrightnessAsync(brightness)
+        await Brightness.setSystemBrightnessAsync(brightness);
       }
     })();
   }, [brightness]);
-
-
 
   return (
     <Slider
@@ -54,8 +51,8 @@ const BrightnessSlider = (props: SliderProps) => {
       {...props}
       onValueChange={setBrightness}
       style={{ width: "75%", height: 40 }}
-    // minimumTrackTintColor='#0FE2FF'
-    // maximumTrackTintColor='#3837BA'
+      // minimumTrackTintColor='#0FE2FF'
+      // maximumTrackTintColor='#3837BA'
     />
   );
 };

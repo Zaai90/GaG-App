@@ -1,8 +1,8 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
+import GotoButton from "../Components/Buttons/GotoButton";
 import GameCard from "../Components/GameCard";
-import GotoButton from "../Components/GotoButton";
 import mockData from "../Data/mockData";
 import { RootStackParamList } from "../navigation/types";
 

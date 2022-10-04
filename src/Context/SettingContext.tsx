@@ -2,7 +2,7 @@ import React, { createContext, ReactNode, useContext } from "react";
 import useAsyncStorage from "../Hooks/Storage";
 
 interface SettingProviderProps {
-    children: ReactNode;
+  children: ReactNode;
 }
 
 interface SettingContextValues {
@@ -12,7 +12,6 @@ interface SettingContextValues {
     toggleSound: () => void;
     toggleVibration: () => void;
     toggleNotifications: () => void;
-
 }
 
 const SettingContext = createContext({} as SettingContextValues);
@@ -50,8 +49,6 @@ function SettingsProvider({ children }: SettingProviderProps) {
     );
 }
 
-
 export const useSettings = () => useContext(SettingContext);
-
 
 export default SettingsProvider;
