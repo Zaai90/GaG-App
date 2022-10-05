@@ -1,8 +1,9 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Image, View } from "react-native";
+import { View } from "react-native";
 import GotoButton from "../Components/Buttons/GotoButton";
 import HapticButton from "../Components/Buttons/Haptics";
+import Frostmourne from "../Components/FrostmourneImage";
 import BackgroundHomeVideo from "../Components/Videobackground";
 import { useGameContext } from "../Context/GameContext";
 import { RootStackParamList } from "../navigation/types";
@@ -24,15 +25,7 @@ const Home = (navigator: Props) => {
           alignItems: "center",
         }}
       >
-        <Image
-          source={require("../../assets/images/frostmourne.png")}
-          style={{
-            height: 45,
-            width: 85,
-            resizeMode: "contain",
-            justifyContent: "flex-start",
-          }}
-        />
+        <Frostmourne />
         <View>
           <HapticButton
             style={{
@@ -67,18 +60,10 @@ const Home = (navigator: Props) => {
           alignItems: "center",
         }}
       >
-        <Image
-          source={require("../../assets/images/frostmourne.png")}
-          style={{
-            height: 45,
-            width: 85,
-            resizeMode: "contain",
-            justifyContent: "flex-start",
-          }}
-        />
+        {FavGames.length > 0 ? (
+          <View style={{ flexDirection: "row" }}>
+            <Frostmourne />
 
-        <View>
-          {FavGames.length > 0 ? (
             <HapticButton
               style={{
                 button: {
@@ -100,8 +85,8 @@ const Home = (navigator: Props) => {
               navigator={navigator}
               hapticType='Heavy'
             />
-          ) : null}
-        </View>
+          </View>
+        ) : null}
       </View>
       <View
         style={{
@@ -112,15 +97,7 @@ const Home = (navigator: Props) => {
           alignItems: "center",
         }}
       >
-        <Image
-          source={require("../../assets/images/frostmourne.png")}
-          style={{
-            height: 45,
-            width: 85,
-            resizeMode: "contain",
-            justifyContent: "flex-start",
-          }}
-        />
+        <Frostmourne />
         <View>
           <GotoButton
             style={{
