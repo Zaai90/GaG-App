@@ -1,14 +1,8 @@
-import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 const TitlePlacer = () => {
-  const route = useRoute();
-  return (
-    <View style={styles.PlaceTitle}>
-      
-    </View>
-  );
+  return <View style={styles.PlaceTitle}></View>;
 };
 
 export default TitlePlacer;
