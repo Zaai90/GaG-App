@@ -36,12 +36,13 @@ function BackgroundHomeVideo({ navigator }: Props) {
     <View style={{ height: "100%", width: "100%", backgroundColor: "white" }}>
       <Video
         ref={video}
-        source={require("../../assets/Wrath.mp4")}
+        source={require("../../assets/WOTLK-best.mp4")}
         style={{ height: "100%", width: "100%" }}
         resizeMode='cover'
         onPlaybackStatusUpdate={() => setStatus(status)}
         isLooping={true}
         isMuted={!isSoundOn}
+        volume={0.5}
       />
     </View>
   );
