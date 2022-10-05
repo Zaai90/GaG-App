@@ -6,7 +6,7 @@ const TitlePlacer = () => {
   const route = useRoute();
   return (
     <View style={styles.PlaceTitle}>
-      <Text>{route.name}</Text>
+      
     </View>
   );
 };
