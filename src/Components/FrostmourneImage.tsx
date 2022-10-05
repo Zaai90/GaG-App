@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     height: 45,
     width: 85,
     resizeMode: "contain",
-    justifyContent: "flex-start",
+    
   },
 });
 
