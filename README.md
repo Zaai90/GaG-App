@@ -87,3 +87,7 @@ GAG runs on `localhost:19000` by default.
 - [x] Ytterligare en valfri extern modul används i projektet.
 - [x] Prototyper för applikation tas fram innan den implementeras. Bilder på prototypen
       skall finnas i projektet vid inlämning.
+
+## Limitations
+
+- Delete Account button in Settings does not do anything - because no User functionality exists.
