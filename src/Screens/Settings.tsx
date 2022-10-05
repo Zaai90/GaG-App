@@ -20,7 +20,6 @@ const Settings = ({ navigation }: Props) => {
 
   return (
     <View>
-      <Text>Settings Screen Options</Text>
       {/* SOUND SWITCH */}
       <View style={settingsStyle.settingsContainer}>
         <Text style={settingsStyle.text}>Sound</Text>
