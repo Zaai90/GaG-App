@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import * as Haptics from "expo-haptics";
-import React from "react";
+import React, { ReactNode } from "react";
 import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from "react-native";
 import { useSettings } from "../../Context/SettingContext";
 import { OmitGotoParamList, RootStackParamList } from "../../navigation/types";
@@ -13,6 +13,7 @@ type Props = {
   title: string;
   hapticType?: "Light" | "Medium" | "Heavy" | "Success" | "Warning" | "Error";
   style?: ButtonStyle;
+  children?: ReactNode;
 };
 
 type ButtonStyle = {
@@ -20,7 +21,7 @@ type ButtonStyle = {
   text?: StyleProp<TextStyle>;
 };
 
-const HapticButton = ({ navigator, title, to, hapticType, style }: Props) => {
+const HapticButton = ({ navigator, title, to, hapticType, style, children }: Props) => {
   const { isSoundOn, isVibrationOn } = useSettings();
   return (
     <Pressable
@@ -38,6 +39,7 @@ const HapticButton = ({ navigator, title, to, hapticType, style }: Props) => {
         navigator.navigation.navigate(to);
       }}
     >
+      {children}
       <Text style={[basicStyle.text, style?.text]}>{title}</Text>
     </Pressable>
   );
