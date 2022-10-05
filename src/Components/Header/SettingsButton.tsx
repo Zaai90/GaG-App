@@ -1,7 +1,7 @@
+import { Octicons } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
 import { Pressable } from "react-native";
-import { Octicons, Ionicons } from "@expo/vector-icons";
 import { useSettings } from "../../Context/SettingContext";
 
 const SettingsButton = () => {
