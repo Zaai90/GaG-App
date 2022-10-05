@@ -10,7 +10,7 @@ type Props = {
   style?: ButtonStyle;
 };
 
-type ButtonStyle = {
+export type ButtonStyle = {
   button?: StyleProp<ViewStyle>;
   text?: StyleProp<TextStyle>;
 };

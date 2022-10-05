@@ -25,6 +25,7 @@ const HomeStackNavigator = () => {
         headerRight: () => <HomeButton />,
         headerLeft: () => <SettingsButton />,
         headerTitle: () => <TitlePlacer />,
+        orientation: "all",
       }}
     >
       <RootStack.Screen name='Home' component={Home} />
