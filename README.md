@@ -43,6 +43,10 @@ GAG runs on `localhost:19000` by default.
 
   - [Animated] (https://reactnative.dev/docs/animated) - used in AnimView.tsx
 
+  - [Pressable] (https://reactnative.dev/docs/pressable) - used in GotoButton.tsx
+
+  - [AsyncStorage] (https://react-native-async-storage.github.io/async-storage/docs/install/) - used in Storage.tsx
+
 - [Expo](https://docs.expo.dev/)
 
   - [Haptics](https://docs.expo.dev/versions/latest/sdk/haptics/) - used in Haptics.tsx
@@ -55,9 +59,11 @@ GAG runs on `localhost:19000` by default.
 
   - [Brightness](https://docs.expo.dev/versions/latest/sdk/brightness/) - used in Slider.tsx
 
+  - [StatusBar](https://docs.expo.dev/versions/latest/sdk/status-bar/) - used in App.tsx
+
 - [Third party modules]
 
-- [React Navigation](https://reactnavigation.org/) - used in SettingsButton.tsx
+- [React Navigation](https://reactnavigation.org/) - used in Index.tsx
 
 - [Stack-navigator](https://reactnavigation.org/docs/en/stack-navigator.html) - used in HomeStack.tsx
 
