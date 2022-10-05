@@ -1,4 +1,5 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 import { useGameContext } from "../Context/GameContext";
@@ -9,6 +10,7 @@ interface Props {
 }
 
 const GameCard = ({ game }: Props) => {
+  const navigation = useNavigation();
   const { toggleFav } = useGameContext();
 
   return (
@@ -36,7 +38,12 @@ const GameCard = ({ game }: Props) => {
                 toggleFav(game.id);
               }}
             />
-            <MaterialCommunityIcons name='pencil' size={24} color='purple' />
+            <MaterialCommunityIcons
+              name='pencil'
+              size={24}
+              color='purple'
+              onPress={() => navigation.navigate("Edit", { id: game.id })}
+            />
           </View>
         </View>
         <View style={style.score}>
