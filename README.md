@@ -1,6 +1,6 @@
 #### Assignment 1- GaG-App
 
-Gimmie a game- The app for the person that cannot decide what game you want to play on their own
+Gimmie a game - an app for the person that cannot decide what game they want to play on their own!
 
 ## Server setup
 
@@ -23,43 +23,45 @@ GAG runs on `localhost:19000` by default.
 
 - [React Native](https://facebook.github.io/react-native/)
 
-  - [Pressable](https://reactnative.dev/docs/pressable)
+  - [Pressable](https://reactnative.dev/docs/pressable) - used in GotoButton.tsx
 
-  - [ScrollView](https://reactnative.dev/docs/scrollview)
+  - [ScrollView](https://reactnative.dev/docs/scrollview) - used in GameList.tsx
 
-  - [View](https://reactnative.dev/docs/view)
+  - [View](https://reactnative.dev/docs/view) - used in GameCard.tsx
 
-  - [Text](https://reactnative.dev/docs/text)
+  - [Text](https://reactnative.dev/docs/text) - used in GameCard.tsx
 
-  - [Image](https://reactnative.dev/docs/image)
+  - [Image](https://reactnative.dev/docs/image) - used in GameCard.tsx
 
-  - [StyleSheet](https://reactnative.dev/docs/stylesheet)
+  - [StyleSheet](https://reactnative.dev/docs/stylesheet) - used in GameCard.tsx
 
-  - [TextInput](https://reactnative.dev/docs/textinput)
+  - [TextInput](https://reactnative.dev/docs/textinput) - used in Add.tsx
 
-  - [Button](https://reactnative.dev/docs/button)
+  - [Button](https://reactnative.dev/docs/button) - used in Settings.tsx
 
-  - [Switch](https://reactnative.dev/docs/switch)
+  - [Switch](https://reactnative.dev/docs/switch) - used in Settings.tsx
+
+  - [Animated] (https://reactnative.dev/docs/animated) - used in AnimView.tsx
 
 - [Expo](https://docs.expo.dev/)
 
-  - [Haptics](https://docs.expo.dev/versions/latest/sdk/haptics/)
+  - [Haptics](https://docs.expo.dev/versions/latest/sdk/haptics/) - used in Haptics.tsx
 
-  - [Slider](https://docs.expo.dev/versions/latest/sdk/slider/)
+  - [Slider](https://docs.expo.dev/versions/latest/sdk/slider/) - used in Slider.tsx
 
-  - [Audio](https://docs.expo.dev/versions/latest/sdk/audio/)
+  - [Audio](https://docs.expo.dev/versions/latest/sdk/audio/) - used in SoundButton.tsx
 
-  - [Reanimated](https://docs.expo.dev/versions/latest/sdk/reanimated/)
+  - [Speech](https://docs.expo.dev/versions/latest/sdk/speech/) - used in Speech.tsx
 
-  - [Speech](https://docs.expo.dev/versions/latest/sdk/speech/)
+  - [Brightness](https://docs.expo.dev/versions/latest/sdk/brightness/) - used in Slider.tsx
 
-  - [Brightness](https://docs.expo.dev/versions/latest/sdk/brightness/)
+- [Third party modules]
 
-- [React Navigation](https://reactnavigation.org/)
+- [React Navigation](https://reactnavigation.org/) - used in SettingsButton.tsx
 
-  - [Stack-navigator](https://reactnavigation.org/docs/en/stack-navigator.html)
+- [Stack-navigator](https://reactnavigation.org/docs/en/stack-navigator.html) - used in HomeStack.tsx
 
-- [Uuid](https://www.npmjs.com/package/uuid)
+- [Uuid](https://www.npmjs.com/package/uuid) - used in GameContext.tsx
 
 ## Demands for a passing grade
 
