@@ -1,7 +1,9 @@
 import { Audio } from "expo-av";
 import React from "react";
-import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from "react-native";
+import { StyleProp, TextStyle, ViewStyle } from "react-native";
 import DeathSoundEffect from "../../../assets/DeathSoundEffect.wav";
+import { useSettings } from "../../Context/SettingContext";
+import BasicButton from "./BasicButton";
 
 interface Props {
   onPress: () => void;
@@ -16,6 +18,7 @@ type ButtonStyle = {
 
 const SoundButton = ({ title, onPress, style }: Props) => {
   const [sound, setSound] = React.useState<Audio.Sound | null>(null);
+  const { isSoundOn } = useSettings();
 
   async function playSound() {
     const { sound } = await Audio.Sound.createAsync(DeathSoundEffect);
@@ -27,45 +30,22 @@ const SoundButton = ({ title, onPress, style }: Props) => {
   }
 
   React.useEffect(() => {
-    return sound
-      ? () => {
-          console.log("Unloading Sound");
-          sound.unloadAsync();
-        }
-      : undefined;
+    sound ? () => {
+      console.log("SoundButton: Unloading Sound");
+      sound.unloadAsync();
+    } : undefined;
   }, [sound]);
 
   return (
-    <Pressable
-      style={[basicStyle.button, style?.button]}
+    <BasicButton
+      style={style}
+      title={title}
       onPress={() => {
-        playSound();
+        isSoundOn && playSound();
         onPress();
         sound?.stopAsync();
       }}
-    >
-      <Text>{title}</Text>
-    </Pressable>
+    />
   );
 };
 export default SoundButton;
-
-const basicStyle = StyleSheet.create({
-  button: {
-    marginVertical: 5,
-    paddingVertical: 12,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-    backgroundColor: "#876796",
-  },
-  text: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: "bold",
-    letterSpacing: 0.25,
-    color: "white",
-  },
-});
