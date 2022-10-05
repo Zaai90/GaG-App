@@ -1,12 +1,13 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Speech from "expo-speech";
 import React from "react";
-import { View } from "react-native";
+import { Pressable } from "react-native";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 
 interface Props {
   gameId: string;
+  style?: StyleSheet;
 }
 
 function TextToSpeech({ gameId }: Props) {
@@ -34,9 +35,10 @@ function TextToSpeech({ gameId }: Props) {
   };
 
   return (
-    <View>
-      <MaterialCommunityIcons name='text-to-speech' size={30} color='black' onPress={speak} />
-    </View>
+    <Pressable >
+      <MaterialCommunityIcons name="volume-high" size={24} color="Black" onPress={speak} />
+    </Pressable>
+
   );
 }
 
