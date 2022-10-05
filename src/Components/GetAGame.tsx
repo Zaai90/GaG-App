@@ -8,8 +8,7 @@ import SoundButton from "./Buttons/SoundButton";
 import GAGCard from "./GAGCard";
 
 const GetAGame = () => {
-  const { games } = useGameContext();
-  const { getGameById } = useGameContext();
+  const { games, getGameById } = useGameContext();
 
   const [rerender, setRerender] = useState<boolean>(true);
   const [game, setGame] = React.useState<Game>();
