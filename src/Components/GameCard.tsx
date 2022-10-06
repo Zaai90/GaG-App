@@ -15,13 +15,23 @@ const GameCard = ({ game }: Props) => {
 
   return (
     <View style={style.container}>
-      <View style={style.image}>
-        <Image
-          resizeMode='stretch'
-          source={{ uri: game.imgUrl }}
-          style={{ width: "100%", height: "100%" }}
-        />
-      </View>
+      {game.imgUrl !== "" ? (
+        <View style={style.image}>
+          <Image
+            resizeMode='stretch'
+            source={{ uri: game.imgUrl }}
+            style={{ width: "100%", height: "100%" }}
+          />
+        </View>
+      ) : (
+        <View style={style.image}>
+          <Image
+            resizeMode='stretch'
+            source={{ uri: "https://www.igdb.com/assets/img/default_cover_big.png" }}
+            style={{ width: "100%", height: "100%" }}
+          />
+        </View>
+      )}
 
       <View>
         <View style={{ flexDirection: "row" }}>

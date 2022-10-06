@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import uuid from "react-native-uuid";
 import { Game, GameCreate } from "../Data/game";
 import { mockData } from "../Data/mockData";
 
@@ -25,8 +25,9 @@ function GameContextProvider({ children }: GameProviderProps) {
 
   function addGame(game: GameCreate) {
     const newGame = {
-      id: uuidv4(),
+      id: uuid.v4().toString(),
       ...game,
+      isFav: false,
     };
     setGames([...games, newGame]);
   }
