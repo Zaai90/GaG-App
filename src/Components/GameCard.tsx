@@ -11,17 +11,27 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   const navigation = useNavigation();
-  const { toggleFav } = useGameContext();
+  const { toggleFav, deleteGame } = useGameContext();
 
   return (
     <View style={style.container}>
-      <View style={style.image}>
-        <Image
-          resizeMode='stretch'
-          source={{ uri: game.imgUrl }}
-          style={{ width: "100%", height: "100%" }}
-        />
-      </View>
+      {game.imgUrl !== "" ? (
+        <View style={style.image}>
+          <Image
+            resizeMode='stretch'
+            source={{ uri: game.imgUrl }}
+            style={{ width: "100%", height: "100%" }}
+          />
+        </View>
+      ) : (
+        <View style={style.image}>
+          <Image
+            resizeMode='stretch'
+            source={{ uri: "https://www.igdb.com/assets/img/default_cover_big.png" }}
+            style={{ width: "100%", height: "100%" }}
+          />
+        </View>
+      )}
 
       <View>
         <View style={{ flexDirection: "row" }}>
@@ -50,7 +60,7 @@ const GameCard = ({ game }: Props) => {
           <Text style={{ fontSize: 15 }}>🍕🍕🍕🍕🍕</Text>
         </View>
         <View style={style.button}>
-          <Button color='red' title='Delete game' />
+          <Button color='red' title='Delete game' onPress={() => deleteGame(game.id)} />
         </View>
       </View>
     </View>

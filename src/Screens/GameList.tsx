@@ -3,32 +3,36 @@ import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import GotoButton from "../Components/Buttons/GotoButton";
 import GameCard from "../Components/GameCard";
-import mockData from "../Data/mockData";
+import { useGameContext } from "../Context/GameContext";
 import { RootStackParamList } from "../navigation/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "GameList">;
 
-const GameList = (navigator: Props) => (
-  <View>
-    <ScrollView contentContainerStyle={styles.container}>
-      {mockData.map((game) => (
-        <View key={game.id} style={styles.cardContainer}>
-          <GameCard game={game} />
+const GameList = (navigator: Props) => {
+  const { games } = useGameContext();
+
+  return (
+    <View>
+      <ScrollView contentContainerStyle={styles.container}>
+        {games.map((game) => (
+          <View key={game.id} style={styles.cardContainer}>
+            <GameCard game={game} />
+          </View>
+        ))}
+      </ScrollView>
+      <View style={styles.ButtonBar}>
+        <View>
+          <GotoButton
+            title='Add game'
+            to='Add'
+            navigator={navigator}
+            style={{ button: styles.AddButton, text: styles.buttonText }}
+          />
         </View>
-      ))}
-    </ScrollView>
-    <View style={styles.ButtonBar}>
-      <View>
-        <GotoButton
-          title='Add game'
-          to='Add'
-          navigator={navigator}
-          style={{ button: styles.AddButton, text: styles.buttonText }}
-        />
       </View>
     </View>
-  </View>
-);
+  );
+};
 
 export default GameList;
 
