@@ -29,7 +29,9 @@
     "expo-brightness": "~10.3.0",
     "expo-av": "~12.0.4",
     "@react-native-async-storage/async-storage": "~1.17.3",
-    "expo-updates": "~0.14.6"
+    "expo-updates": "~0.14.6",
+    "expo-device": "~4.3.0",
+    "expo-notifications": "~0.16.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
