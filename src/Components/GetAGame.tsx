@@ -18,8 +18,7 @@ function updateNotification({title}: Props) {
 let firstRender = 0;
 
 const GetAGame = () => {
-  const { games } = useGameContext();
-  const { getGameById } = useGameContext();
+  const { games, getGameById } = useGameContext();
 
   const [rerender, setRerender] = useState<boolean>(false);
   const [game, setGame] = React.useState<Game>();
