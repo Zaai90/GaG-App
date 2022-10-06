@@ -11,7 +11,7 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   const navigation = useNavigation();
-  const { toggleFav } = useGameContext();
+  const { toggleFav, deleteGame } = useGameContext();
 
   return (
     <View style={style.container}>
@@ -60,7 +60,7 @@ const GameCard = ({ game }: Props) => {
           <Text style={{ fontSize: 15 }}>🍕🍕🍕🍕🍕</Text>
         </View>
         <View style={style.button}>
-          <Button color='red' title='Delete game' />
+          <Button color='red' title='Delete game' onPress={() => deleteGame(game.id)} />
         </View>
       </View>
     </View>
