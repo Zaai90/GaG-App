@@ -63,9 +63,9 @@ export default GetAFav;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    margintop: 20,
+    margintop: 5,
     marginBottom: 5,
-    backgroundColor: "white",
+    backgroundColor: "EBD4C2",
   },
 });
 
