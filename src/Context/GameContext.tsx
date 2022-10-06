@@ -14,6 +14,7 @@ interface IGameContext {
   getGameById: (id: string) => Game;
   deleteGame: (id: string) => void;
   toggleFav: (id: string) => void;
+  editGame: (game: Game) => void;
 }
 
 const GameContext = createContext({} as IGameContext);
@@ -58,6 +59,14 @@ function GameContextProvider({ children }: GameProviderProps) {
     return games.filter((game) => game.isFavourite === true);
   }
 
+  function editGame(editedGame: Game) {
+    const index = games.findIndex((game) => game.id === editedGame.id);
+    console.log(index);
+    const gameCopy = [...games];
+    gameCopy.splice(index, 1, editedGame);
+    setGames(gameCopy);
+  }
+
   return (
     <GameContext.Provider
       value={{
@@ -67,6 +76,7 @@ function GameContextProvider({ children }: GameProviderProps) {
         getGameById,
         toggleFav,
         deleteGame,
+        editGame,
       }}
     >
       {children}
