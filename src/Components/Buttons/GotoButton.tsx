@@ -7,6 +7,7 @@ type Props = {
   navigator: NativeStackScreenProps<RootStackParamList, keyof OmitGotoParamList>;
   to: keyof OmitGotoParamList;
   title: string;
+  onPress?: () => void;
   style?: ButtonStyle;
 };
 
