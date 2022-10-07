@@ -1,6 +1,13 @@
-#### Assignment 1- GaG-App
+# Assignment 1- GaG-App
 
 Gimmie a game - an app for the person that cannot decide what game they want to play on their own!
+
+## Created by:
+
+- [Erik G](https://github.com/Zaai90)
+- [Frans](https://https://github.com/FransBillqvist)
+- [Daniel T](https://https://github.com/DTSD21)
+- [Lucas](https://github.com/LucBen93)
 
 ## Server setup
 
@@ -45,7 +52,7 @@ GAG runs on `localhost:19000` by default.
 
   - [Platform](https://docs.expo.dev/versions/v46.0.0/react-native/platform/) - used in Notification.tsx
 
-- [Expo](https://docs.expo.dev/) -
+- [Expo](https://docs.expo.dev/)
 
   - [Device](https://docs.expo.dev/versions/v46.0.0/sdk/device/) - used in Notifications.tsx
 
