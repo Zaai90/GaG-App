@@ -61,7 +61,6 @@ function GameContextProvider({ children }: GameProviderProps) {
 
   function editGame(editedGame: Game) {
     const index = games.findIndex((game) => game.id === editedGame.id);
-    console.log(index);
     const gameCopy = [...games];
     gameCopy.splice(index, 1, editedGame);
     setGames(gameCopy);

@@ -1,16 +1,19 @@
+import { RouteProp, useRoute } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { useState } from "react";
-import { Button, ScrollView, StyleSheet, Text, TextInput } from "react-native";
+import { ScrollView, StyleSheet, Text, TextInput } from "react-native";
+import BasicButton from "../Components/Buttons/BasicButton";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
 import { RootStackParamList } from "../navigation/types";
 
-type Props = {
-  navigation: NativeStackScreenProps<RootStackParamList, "Edit">;
-  id: string;
-};
+type EditScreenRouteProp = RouteProp<RootStackParamList, "Edit">;
 
-const Edit = ({ navigation, id }: Props) => {
+type Props = NativeStackScreenProps<RootStackParamList, "Edit">;
+
+const Edit = (navigator: Props) => {
+  const route = useRoute<EditScreenRouteProp>();
+  const { id } = route.params;
   const { getGameById, editGame } = useGameContext();
   const [gameToEdit, setGame] = useState<Game>(getGameById(id));
 
@@ -25,6 +28,7 @@ const Edit = ({ navigation, id }: Props) => {
         style={styles.input}
         onChangeText={(text: string) => handleChange("title", text)}
         value={gameToEdit.title}
+        placeholder={gameToEdit.title}
       />
       <Text>Genre</Text>
       <TextInput
@@ -36,7 +40,7 @@ const Edit = ({ navigation, id }: Props) => {
       <TextInput
         style={styles.input}
         onChangeText={(num: string) => handleChange("score", Number(num))}
-        value={gameToEdit.score.toString()}
+        value={gameToEdit.score?.toString()}
         keyboardType='numeric'
         placeholder='0'
       />
@@ -53,17 +57,17 @@ const Edit = ({ navigation, id }: Props) => {
         value={gameToEdit.imgUrl}
       />
 
-      <Button
+      <BasicButton
         title='Save changes'
         onPress={() => {
           editGame(gameToEdit);
-          navigation.navigation.navigate("GameList");
+          navigator.navigation.goBack();
         }}
       />
-      <Button
+      <BasicButton
         title='Cancel'
         onPress={() => {
-          navigation.navigation.navigate("GameList");
+          navigator.navigation.goBack();
         }}
       />
     </ScrollView>
