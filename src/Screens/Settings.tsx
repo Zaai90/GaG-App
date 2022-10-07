@@ -107,7 +107,7 @@ const settingsStyle = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#F2F2F2",
+    backgroundColor: "#EBD4C2",
   },
   deletionButton: {
     marginVertical: 5,
