@@ -23,9 +23,7 @@ export default GAGCard;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
     paddingHorizontal: 4,
     paddingLeft: 4,
     paddingBottom: 70,

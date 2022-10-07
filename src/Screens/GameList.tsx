@@ -37,7 +37,7 @@ export default GameList;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "#EBD4C2",
     alignItems: "center",
     justifyContent: "center",
     marginVertical: 15,
