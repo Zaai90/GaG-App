@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { useGameContext } from "../Context/GameContext";
+import { useSettings } from "../Context/SettingContext";
 import { Game } from "../Data/game";
 import { FadeInView } from "./AnimView";
 import SoundButton from "./Buttons/SoundButton";
@@ -18,6 +19,7 @@ function updateNotification({title}: Props) {
 let firstRender = 0;
 
 const GetAFav = () => {
+  const { isNotificationsOn } = useSettings();
   const { getFavGames } = useGameContext();
 
   const [rerender, setRerender] = useState<boolean>(false);
@@ -34,14 +36,16 @@ const GetAFav = () => {
       }
       if (game) {
         const title = game.title;
+        if(isNotificationsOn) {
         updateNotification({ title});
+        }
       }
     }
     setRerender(false);
   }, [rerender, game]);
   return (
     <FadeInView key={game?.id} style={styles.cardContainer}>
-      <Notification />
+      {isNotificationsOn === true ? <Notification /> : <></>}
       {game ? <GAGCard game={game} /> : null}
       <View style={{ alignItems: "center" }}>
         {game ? <TextToSpeech gameId={game.id} /> : null}
@@ -63,8 +67,8 @@ export default GetAFav;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    margintop: 5,
+    marginTop: 5,
     marginBottom: 5,
-    backgroundColor: "EBD4C2",
+    backgroundColor: "#EBD4C2",
   },
 });

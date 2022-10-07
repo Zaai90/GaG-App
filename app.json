@@ -5,12 +5,11 @@
     "owner": "gag-app-project",
     "version": "1.0.0",
     "orientation": "default",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/splash_v2.png",
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0,
@@ -24,17 +23,21 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#FF00FF"
       }
     },
     "web": {
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
         "projectId": "8abb0a29-9454-4452-a71a-8774a1c462c6"
       }
+    },
+    "path":{
+      "image": "https://thumbs.dreamstime.com/b/b-letter-boutique-logo-design-159417325.jpg",
+      "backgroundColor": "#000000"
     },
     "runtimeVersion": {
       "policy": "sdkVersion"

@@ -41,9 +41,12 @@ GAG runs on `localhost:19000` by default.
 
   - [Switch](https://reactnative.dev/docs/switch) - used in Settings.tsx
 
-  - [Animated] (https://reactnative.dev/docs/animated) - used in AnimView.tsx
+  - [Animated](https://reactnative.dev/docs/animated) - used in AnimView.tsx
 
-  - [AsyncStorage] (https://react-native-async-storage.github.io/async-storage/docs/install/) - used in Storage.tsx
+  - [Pressable](https://reactnative.dev/docs/pressable) - used in GotoButton.tsx
+
+  - [AsyncStorage](https://react-native-async-storage.github.io/async-storage/docs/install/) - used in Storage.tsx
+
 
 - [Expo](https://docs.expo.dev/)
 
@@ -70,12 +73,12 @@ GAG runs on `localhost:19000` by default.
 ## Demands for a passing grade
 
 - [x] Projektet använder minst 6 stycken RN-komponenter och minst 6 stycken Expo
-      komponenter.
+      komponenter.  
 - [x] De utvalda komponenterna ska antecknas i er README tillsammans med en lista över
-      genomförda krav.
+      genomförda krav.   
 - [x] Git & GitHub har använts
 - [x] Projektmappen innehåller en README.md fil - (läs ovan för mer info)
-- [ ] Uppgiften lämnas in i tid!
+- [x] Uppgiften lämnas in i tid!
 - [x] Muntlig presentation är genomförd
 
 ## Demands for a higher grade
