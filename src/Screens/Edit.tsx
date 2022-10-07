@@ -1,42 +1,76 @@
+import { RouteProp, useRoute } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import React from "react";
-import { Button, StyleSheet, TextInput, View } from "react-native";
+import React, { useState } from "react";
+import { ScrollView, StyleSheet, Text, TextInput } from "react-native";
+import BasicButton from "../Components/Buttons/BasicButton";
+import { useGameContext } from "../Context/GameContext";
+import { Game } from "../Data/game";
 import { RootStackParamList } from "../navigation/types";
+
+type EditScreenRouteProp = RouteProp<RootStackParamList, "Edit">;
 
 type Props = NativeStackScreenProps<RootStackParamList, "Edit">;
 
-const Edit = ({ navigation, route }: Props) => {
-  const [text, onChangeText] = React.useState("Title");
-  const [text2, onChangeText2] = React.useState("Genre");
-  const [text3, onChangeText3] = React.useState("Score");
-  const [text4, onChangeText4] = React.useState("Developer");
-  const [text5, onChangeText5] = React.useState("Image URL");
+const Edit = (navigator: Props) => {
+  const route = useRoute<EditScreenRouteProp>();
+  const { id } = route.params;
+  const { getGameById, editGame } = useGameContext();
+  const [gameToEdit, setGame] = useState<Game>(getGameById(id));
+
+  const handleChange = (key: string, value: string | number) => {
+    setGame((prev) => ({ ...prev, [key]: value }));
+  };
+
   return (
-    <View>
-      <TextInput style={styles.input} onChangeText={onChangeText} value={text} />
-      <TextInput style={styles.input} onChangeText={onChangeText2} value={text2} />
-      <TextInput style={styles.input} onChangeText={onChangeText3} value={text3} />
-      <TextInput style={styles.input} onChangeText={onChangeText4} value={text4} />
-      <TextInput style={styles.input} onChangeText={onChangeText5} value={text5} />
-      <Button
+    <ScrollView>
+      <Text>Title</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={(text: string) => handleChange("title", text)}
+        value={gameToEdit.title}
+        placeholder={gameToEdit.title}
+      />
+      <Text>Genre</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={(text: string) => handleChange("genre", text)}
+        value={gameToEdit.genre}
+      />
+      <Text>Score</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={(num: string) => handleChange("score", Number(num))}
+        value={gameToEdit.score?.toString()}
+        keyboardType='numeric'
+        placeholder='0'
+      />
+      <Text>Developer</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={(text: string) => handleChange("developer", text)}
+        value={gameToEdit.developer}
+      />
+      <Text>Image url</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={(text: string) => handleChange("imageUrl", text)}
+        value={gameToEdit.imgUrl}
+      />
+
+      <BasicButton
         title='Save changes'
         onPress={() => {
-          navigation.navigate("GameList");
+          editGame(gameToEdit);
+          navigator.navigation.goBack();
         }}
       />
-      <Button
+      <BasicButton
         title='Cancel'
         onPress={() => {
-          navigation.navigate("GameList");
+          navigator.navigation.goBack();
         }}
       />
-      <Button
-        title='Home'
-        onPress={() => {
-          navigation.navigate("Home");
-        }}
-      />
-    </View>
+    </ScrollView>
   );
 };
 

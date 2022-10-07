@@ -10,7 +10,6 @@ type Props = NativeStackScreenProps<RootStackParamList, "GameList">;
 
 const GameList = (navigator: Props) => {
   const { games } = useGameContext();
-
   return (
     <View>
       <ScrollView contentContainerStyle={styles.container}>
