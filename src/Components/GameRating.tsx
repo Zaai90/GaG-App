@@ -12,7 +12,7 @@ export default function GameRating({ id, score }: Props) {
 
   useEffect(() => {
     addStars();
-  }, [id]);
+  }, [id, score]);
 
   const addStars = () => {
     const stars: JSX.Element[] = [];

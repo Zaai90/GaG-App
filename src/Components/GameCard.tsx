@@ -58,7 +58,6 @@ const GameCard = ({ game }: Props) => {
           </View>
         </View>
         <View style={style.score}>
-          <Text>{game.score}</Text>
           <GameRating {...game} />
         </View>
         <View style={style.button}>
