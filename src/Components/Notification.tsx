@@ -1,10 +1,8 @@
+import * as Device from "expo-device";
 import { Subscription } from "expo-modules-core";
 import * as Notifications from "expo-notifications";
 import React, { useEffect, useRef, useState } from "react";
-import { Button, Platform, Text, View } from "react-native";
-import * as Device from "expo-device";
-import { Game } from "../Data/game";
-
+import { Platform } from "react-native";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -27,7 +25,7 @@ export default function Notification() {
     notificationListener.current = Notifications.addNotificationReceivedListener((notification) => {
       setNotification(notification);
     });
-    
+
     responseListener.current = Notifications.addNotificationResponseReceivedListener((response) => {
       console.log(response);
     });
@@ -37,26 +35,22 @@ export default function Notification() {
         Notifications.removeNotificationSubscription(notificationListener.current);
       }
       if (responseListener.current) {
-        
         Notifications.removeNotificationSubscription(responseListener.current);
       }
     };
   }, []);
 
-  return (
-    <>
-    </>
-  );
+  return <></>;
 }
 
 interface NotificationProps {
   title: string;
 }
 
-export async function schedulePushNotification({title} : NotificationProps) {
+export async function schedulePushNotification({ title }: NotificationProps) {
   await Notifications.scheduleNotificationAsync({
     content: {
-      title: "You've got a recommended Game ",
+      title: "You've got a recommended Game",
       body: "Here is the game to play: " + title,
     },
     trigger: { seconds: 1 },
@@ -64,7 +58,6 @@ export async function schedulePushNotification({title} : NotificationProps) {
 }
 
 async function registerForPushNotificationsAsync() {
-  
   let token;
 
   if (Platform.OS === "android") {
