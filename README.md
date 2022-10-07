@@ -47,6 +47,7 @@ GAG runs on `localhost:19000` by default.
 
   - [AsyncStorage](https://react-native-async-storage.github.io/async-storage/docs/install/) - used in Storage.tsx
 
+
 - [Expo](https://docs.expo.dev/)
 
   - [Haptics](https://docs.expo.dev/versions/latest/sdk/haptics/) - used in Haptics.tsx
@@ -72,9 +73,9 @@ GAG runs on `localhost:19000` by default.
 ## Demands for a passing grade
 
 - [x] Projektet använder minst 6 stycken RN-komponenter och minst 6 stycken Expo
-      komponenter.
+      komponenter.  
 - [x] De utvalda komponenterna ska antecknas i er README tillsammans med en lista över
-      genomförda krav.
+      genomförda krav.   
 - [x] Git & GitHub har använts
 - [x] Projektmappen innehåller en README.md fil - (läs ovan för mer info)
 - [x] Uppgiften lämnas in i tid!
