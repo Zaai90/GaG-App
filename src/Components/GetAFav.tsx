@@ -68,9 +68,3 @@ const styles = StyleSheet.create({
     backgroundColor: "EBD4C2",
   },
 });
-
-
-// const GetAFav = () => {
-  // const { getFavGames } = useGameContext();
-
-{/* <SoundButton title='GaG another Fav 😍' onPress={() => setRerender(true)} /> */}
