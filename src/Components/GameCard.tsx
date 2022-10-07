@@ -4,6 +4,7 @@ import React from "react";
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
+import GameRating from "./GameRating";
 
 interface Props {
   game: Game;
@@ -57,7 +58,8 @@ const GameCard = ({ game }: Props) => {
           </View>
         </View>
         <View style={style.score}>
-          <Text style={{ fontSize: 15 }}>🍕🍕🍕🍕🍕</Text>
+          <Text>{game.score}</Text>
+          <GameRating {...game} />
         </View>
         <View style={style.button}>
           <Button color='red' title='Delete game' onPress={() => deleteGame(game.id)} />

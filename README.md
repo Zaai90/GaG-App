@@ -45,11 +45,13 @@ GAG runs on `localhost:19000` by default.
 
   - [Platform](https://docs.expo.dev/versions/v46.0.0/react-native/platform/) - used in Notification.tsx
 
-- [Expo](https://docs.expo.dev/) -
+  - [Expo](https://docs.expo.dev/) -
 
   - [Device](https://docs.expo.dev/versions/v46.0.0/sdk/device/) - used in Notifications.tsx
 
   - [Notifications](https://docs.expo.dev/versions/latest/sdk/notifications/) - used in Notifications.tsx
+
+  - [Expo](https://docs.expo.dev/)
 
   - [Haptics](https://docs.expo.dev/versions/latest/sdk/haptics/) - used in Haptics.tsx
 
@@ -65,7 +67,7 @@ GAG runs on `localhost:19000` by default.
 
   - [AsyncStorage](https://docs.expo.dev/versions/v46.0.0/sdk/async-storage/) - used in Storage.tsx
 
-- [Third party modules]
+ - [Third party modules]
 
 - [React Navigation](https://reactnavigation.org/) - used in Index.tsx
 
@@ -78,9 +80,9 @@ GAG runs on `localhost:19000` by default.
 ## Demands for a passing grade
 
 - [x] Projektet använder minst 6 stycken RN-komponenter och minst 6 stycken Expo
-      komponenter.
+      komponenter.  
 - [x] De utvalda komponenterna ska antecknas i er README tillsammans med en lista över
-      genomförda krav.
+      genomförda krav.   
 - [x] Git & GitHub har använts
 - [x] Projektmappen innehåller en README.md fil - (läs ovan för mer info)
 - [x] Uppgiften lämnas in i tid!
