@@ -51,7 +51,7 @@ GAG runs on `localhost:19000` by default.
 
   - [Notifications](https://docs.expo.dev/versions/latest/sdk/notifications/) - used in Notifications.tsx
 
-  - [Expo](https://docs.expo.dev/)
+ - [Expo](https://docs.expo.dev/)
 
   - [Haptics](https://docs.expo.dev/versions/latest/sdk/haptics/) - used in Haptics.tsx
 
