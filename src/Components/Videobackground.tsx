@@ -1,5 +1,5 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Video } from "expo-av";
+import { ResizeMode, Video } from "expo-av";
 import * as React from "react";
 import { View } from "react-native";
 import { useSettings } from "../Context/SettingContext";
@@ -38,7 +38,7 @@ function BackgroundHomeVideo({ navigator }: Props) {
         ref={video}
         source={require("../../assets/WOTLK-best.mp4")}
         style={{ height: "100%", width: "100%" }}
-        resizeMode='cover'
+        resizeMode={ResizeMode.COVER}
         onPlaybackStatusUpdate={() => setStatus(status)}
         isLooping={true}
         isMuted={!isSoundOn}
@@ -47,9 +47,5 @@ function BackgroundHomeVideo({ navigator }: Props) {
     </View>
   );
 }
-
-// function unLoadVideo() => {
-
-// }
 
 export default BackgroundHomeVideo;

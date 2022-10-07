@@ -5,8 +5,6 @@ import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from "re
 import { useSettings } from "../../Context/SettingContext";
 import { OmitGotoParamList, RootStackParamList } from "../../navigation/types";
 
-// Work as GoToButton but with optional haptic feedback parameter
-
 type Props = {
   navigator: NativeStackScreenProps<RootStackParamList, keyof OmitGotoParamList>;
   to: keyof OmitGotoParamList;
