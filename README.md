@@ -109,4 +109,4 @@ GAG runs on `localhost:19000` by default.
 
 - No validation exists in add/edit game right now.
 
-- Games doesn't get saved for the moment.
+- Games doesn't get saved with AsyncStorage for the moment.
