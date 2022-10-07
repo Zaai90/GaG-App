@@ -12,16 +12,12 @@ export const FadeInView = ({ style, children }: Props) => {
   useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
-      duration: 1000,
+      duration: 2000,
       useNativeDriver: true,
     }).start();
   }, [fadeAnim]);
 
   return (
-    <Animated.View // Special animatable View
-      style={[style ? style : null, { opacity: fadeAnim }]} // Bind opacity to animated value
-    >
-      {children}
-    </Animated.View>
+    <Animated.View style={[style ? style : null, { opacity: fadeAnim }]}>{children}</Animated.View>
   );
 };

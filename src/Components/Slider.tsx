@@ -47,8 +47,6 @@ const BrightnessSlider = (props: SliderProps) => {
       {...props}
       onValueChange={setBrightness}
       style={{ width: "75%", height: 40 }}
-      // minimumTrackTintColor='#0FE2FF'
-      // maximumTrackTintColor='#3837BA'
     />
   );
 };
