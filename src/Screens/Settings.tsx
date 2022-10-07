@@ -28,7 +28,7 @@ const Settings = ({ navigation }: Props) => {
           value={isSoundOn}
           onChange={() => {
             toggleSound();
-            isSoundOn === false ? isVibrationOn === true ? VibrationSuccess() : null : null;
+            isSoundOn === false ? (isVibrationOn === true ? VibrationSuccess() : null) : null;
           }}
         />
       </View>
@@ -40,7 +40,11 @@ const Settings = ({ navigation }: Props) => {
           value={isNotificationsOn}
           onChange={() => {
             toggleNotifications();
-            isNotificationsOn === false ? isVibrationOn === true ? VibrationSuccess() : null : null;
+            isNotificationsOn === false
+              ? isVibrationOn === true
+                ? VibrationSuccess()
+                : null
+              : null;
           }}
         />
       </View>

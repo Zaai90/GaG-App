@@ -19,12 +19,7 @@ export default function GameRating({ id, score }: Props) {
 
     for (let index = 0; index < score; index++) {
       stars.push(
-        <MaterialCommunityIcons
-          key={"filled-" + index}
-          name='star'
-          size={24}
-          color='purple'
-        />,
+        <MaterialCommunityIcons key={"filled-" + index} name='star' size={24} color='purple' />,
       );
     }
 

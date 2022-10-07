@@ -27,9 +27,11 @@ const SoundButton = ({ title, onPress, style }: Props) => {
   }
 
   React.useEffect(() => {
-    sound ? () => {
-      sound.unloadAsync();
-    } : undefined;
+    sound
+      ? () => {
+          sound.unloadAsync();
+        }
+      : undefined;
   }, [sound]);
 
   return (

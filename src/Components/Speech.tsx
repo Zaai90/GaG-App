@@ -3,7 +3,7 @@ import React from "react";
 import { Pressable } from "react-native";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 interface Props {
   gameId: string;
@@ -35,10 +35,9 @@ function TextToSpeech({ gameId }: Props) {
   };
 
   return (
-    <Pressable >
-      <MaterialCommunityIcons name="volume-high" size={24} color="Black" onPress={speak} />
+    <Pressable>
+      <MaterialCommunityIcons name='volume-high' size={24} color='Black' onPress={speak} />
     </Pressable>
-
   );
 }
 
