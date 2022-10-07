@@ -108,3 +108,5 @@ GAG runs on `localhost:19000` by default.
 - Text to Speech in Playthis.tsx and Playthisfav.tsx will keep talking even though the sound is set to OFF in Settings and when you navigate around.
 
 - No validation exists in add/edit game right now.
+
+- Games doesn't get saved for the moment.
