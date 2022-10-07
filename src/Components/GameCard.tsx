@@ -2,9 +2,9 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Button, Image, StyleSheet, Text, View } from "react-native";
-import GameRating from "../Components/GameRating";
 import { useGameContext } from "../Context/GameContext";
 import { Game } from "../Data/game";
+import GameRating from "./GameRating";
 
 interface Props {
   game: Game;
@@ -58,6 +58,7 @@ const GameCard = ({ game }: Props) => {
           </View>
         </View>
         <View style={style.score}>
+          <Text>{game.score}</Text>
           <GameRating {...game} />
         </View>
         <View style={style.button}>

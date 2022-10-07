@@ -43,8 +43,6 @@ GAG runs on `localhost:19000` by default.
 
   - [Animated] (https://reactnative.dev/docs/animated) - used in AnimView.tsx
 
-  - [Pressable] (https://reactnative.dev/docs/pressable) - used in GotoButton.tsx
-
   - [AsyncStorage] (https://react-native-async-storage.github.io/async-storage/docs/install/) - used in Storage.tsx
 
 - [Expo](https://docs.expo.dev/)
@@ -67,22 +65,22 @@ GAG runs on `localhost:19000` by default.
 
 - [Stack-navigator](https://reactnavigation.org/docs/en/stack-navigator.html) - used in HomeStack.tsx
 
-- [Uuid](https://www.npmjs.com/package/uuid) - used in GameContext.tsx
+- [React Native Uuid](https://www.npmjs.com/package/react-native-uuid) - used in GameContext.tsx
 
 ## Demands for a passing grade
 
-- [/] Projektet använder minst 6 stycken RN-komponenter och minst 6 stycken Expo
-  komponenter.
-- [/] De utvalda komponenterna ska antecknas i er README tillsammans med en lista över
-  genomförda krav.
+- [x] Projektet använder minst 6 stycken RN-komponenter och minst 6 stycken Expo
+      komponenter.
+- [x] De utvalda komponenterna ska antecknas i er README tillsammans med en lista över
+      genomförda krav.
 - [x] Git & GitHub har använts
 - [x] Projektmappen innehåller en README.md fil - (läs ovan för mer info)
 - [ ] Uppgiften lämnas in i tid!
-- [ ] Muntlig presentation är genomförd
+- [x] Muntlig presentation är genomförd
 
 ## Demands for a higher grade
 
-- [/] Alla punkter för godkänt är uppfyllda
+- [x] Alla punkter för godkänt är uppfyllda
 - [x] React Navigation används för att skapa en bättre upplevelse i appen.
 - [x] Ytterligare en valfri extern modul används i projektet.
 - [x] Prototyper för applikation tas fram innan den implementeras. Bilder på prototypen
