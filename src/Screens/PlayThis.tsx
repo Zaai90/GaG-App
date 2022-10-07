@@ -17,9 +17,9 @@ const PlayThis = () => {
 export default PlayThis;
 
 const styles = StyleSheet.create({
-  container : {
+  container: {
     justifyContent: "center",
-    backgroundColor : "#EBD4C2",
-    flex : 1,
-  }
-})
+    backgroundColor: "#EBD4C2",
+    flex: 1,
+  },
+});

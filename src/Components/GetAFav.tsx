@@ -13,8 +13,8 @@ interface Props {
   title: string;
 }
 
-function updateNotification({title}: Props) {
-  (async () => await schedulePushNotification({ title}))();
+function updateNotification({ title }: Props) {
+  (async () => await schedulePushNotification({ title }))();
 }
 let firstRender = 0;
 
@@ -30,14 +30,14 @@ const GetAFav = () => {
       const FavGames = getFavGames();
       if (firstRender <= 0) {
         const FavGameNumber = Math.floor(Math.random() * FavGames.length);
-        
+
         firstRender++;
         setGame(FavGames[FavGameNumber]);
       }
       if (game) {
         const title = game.title;
-        if(isNotificationsOn) {
-        updateNotification({ title});
+        if (isNotificationsOn) {
+          updateNotification({ title });
         }
       }
     }
