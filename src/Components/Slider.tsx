@@ -12,7 +12,6 @@ const BrightnessSlider = (props: SliderProps) => {
     if (status === "granted") {
       await Brightness.useSystemBrightnessAsync();
       const value = await Brightness.getSystemBrightnessAsync();
-      console.log("Set to " + value);
       setBrightness(value);
     }
   };
@@ -20,7 +19,6 @@ const BrightnessSlider = (props: SliderProps) => {
   useEffect(() => {
     (async () => {
       const { status } = await Brightness.requestPermissionsAsync();
-      console.log(status);
       setGranted(status === "granted");
     })();
   }, []);
@@ -28,7 +26,6 @@ const BrightnessSlider = (props: SliderProps) => {
   useEffect(() => {
     if (granted === true) {
       (async () => {
-        console.log("Getting Systems brightness");
         await getBrightnessFromSystemAsync();
       })();
     }
@@ -36,7 +33,6 @@ const BrightnessSlider = (props: SliderProps) => {
 
   useEffect(() => {
     (async () => {
-      console.log("Brightness set to " + brightness);
       if (granted) {
         await Brightness.setSystemBrightnessAsync(brightness);
       }

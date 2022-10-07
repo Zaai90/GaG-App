@@ -22,16 +22,12 @@ const SoundButton = ({ title, onPress, style }: Props) => {
 
   async function playSound() {
     const { sound } = await Audio.Sound.createAsync(DeathSoundEffect);
-    console.log("Loading Sound");
     setSound(sound);
-
-    console.log("Playing Sound");
     await sound.playAsync();
   }
 
   React.useEffect(() => {
     sound ? () => {
-      console.log("SoundButton: Unloading Sound");
       sound.unloadAsync();
     } : undefined;
   }, [sound]);
