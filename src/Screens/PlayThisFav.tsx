@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import GetAFav from "../Components/GetAFav";
 import { RootStackParamList } from "../navigation/types";
 
@@ -8,10 +8,18 @@ type Props = NativeStackScreenProps<RootStackParamList, "PlayThisFav">;
 
 const PlayThisFav = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <GetAFav />
     </View>
   );
 };
 
 export default PlayThisFav;
+
+const styles = StyleSheet.create({
+  container : {
+    justifyContent: "center",
+    backgroundColor : "#EBD4C2",
+    flex : 1,
+  }
+})

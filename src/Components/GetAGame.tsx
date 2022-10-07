@@ -67,6 +67,6 @@ const styles = StyleSheet.create({
   cardContainer: {
     marginTop: 5,
     marginBottom: 5,
-    backgroundColor: "EBD4C2",
+    backgroundColor: "#EBD4C2",
   },
 });
