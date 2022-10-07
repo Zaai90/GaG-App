@@ -1,7 +1,6 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import React from "react";
+import React, { useEffect } from "react";
 import { Text, View } from "react-native";
-import { useGameContext } from "../Context/GameContext";
 
 interface Props {
   id: string;
@@ -9,67 +8,42 @@ interface Props {
 }
 
 export default function GameRating({ id, score }: Props) {
-  const { setScore } = useGameContext();
-  // const [gameScore, setGameScore] = useState();
+  const [stars, setStars] = React.useState<JSX.Element[]>([]);
 
-  function renderHollowStars() {
-    for (let index = 0; index < 5 - score; index++) {
-      const hollowStar = (
-        <MaterialCommunityIcons
-          name='star-outline'
-          size={24}
-          color='purple'
-          onPress={() => setScore(id, score++)}
-        />
-      );
-      return hollowStar;
-    }
-  }
+  useEffect(() => {
+    addStars();
+  }, [id]);
 
-  // return (result*{score});
+  const addStars = () => {
+    const stars: JSX.Element[] = [];
 
-  function renderStars() {
     for (let index = 0; index < score; index++) {
-      return (
+      stars.push(
         <MaterialCommunityIcons
+          key={"filled-" + index}
           name='star'
           size={24}
           color='purple'
-          onPress={() => setScore(id, score++)}
-        />
+        />,
       );
     }
-  }
+
+    for (let index = 0; index < 5 - score; index++) {
+      stars.push(
+        <MaterialCommunityIcons
+          key={"outline-" + index}
+          name='star-outline'
+          size={24}
+          color='purple'
+        />,
+      );
+    }
+    setStars(stars);
+  };
 
   return (
     <View>
-      <Text style={{ fontSize: 15 }}>
-        {renderStars()}
-        {renderHollowStars()}
-      </Text>
+      <Text style={{ fontSize: 15 }}>{stars}</Text>
     </View>
   );
 }
-
-/* <MaterialCommunityIcons
-  name='star'
-  size={24}
-  color='purple'
-  onPress={() => setScore(id, (score = 1))}
-/>
-
-<MaterialCommunityIcons
-  name='star-outline'
-  size={24}
-  color='purple'
-  onPress={() => setScore(id, (score = 2))}
-/> */
-
-// for (let index = 0; index < score; index++) {
-//   <MaterialCommunityIcons
-//     name='star'
-//     size={24}
-//     color='purple'
-//     onPress={() => setScore(id, (score = index))}
-//   />;
-// }
